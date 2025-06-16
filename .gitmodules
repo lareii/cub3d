@@ -1,0 +1,6 @@
+[submodule "lib/get_next_line"]
+	path = lib/get_next_line
+	url = git@github.com:lareii/get_next_line
+[submodule "lib/minilibx-linux"]
+	path = lib/minilibx-linux
+	url = git@github.com:42paris/minilibx-linux.git
