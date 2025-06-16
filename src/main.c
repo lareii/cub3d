@@ -3,14 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ebabaogl <ebabaogl@student.42kocaeli.co    +#+  +:+       +#+        */
+/*   By: ahekinci <ahekinci@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 21:17:39 by ebabaogl          #+#    #+#             */
-/*   Updated: 2025/06/16 21:17:50 by ebabaogl         ###   ########.fr       */
+/*   Updated: 2025/06/16 21:33:21 by ahekinci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <unistd.h>
+
 int	main(void)
 {
+	write(1, "Hello, World!\n", 14);
 	return (0);
 }
