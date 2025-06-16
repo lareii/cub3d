@@ -5,14 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahekinci <ahekinci@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/16 21:17:39 by ebabaogl          #+#    #+#             */
-/*   Updated: 2025/06/16 21:33:21 by ahekinci         ###   ########.fr       */
+/*   Created: 2025/06/17 02:26:04 by ahekinci          #+#    #+#             */
+/*   Updated: 2025/06/17 02:26:39 by ahekinci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "unistd.h"
 
-int	main(void)
+int main(void)
 {
 	write(1, "Hello, World!\n", 14);
 	return (0);
