@@ -1,4 +1,4 @@
-NAME		= cub3d
+NAME		= cub3D
 
 INC_DIR		= inc
 LIB_DIR		= lib
