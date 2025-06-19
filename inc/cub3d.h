@@ -6,7 +6,7 @@
 /*   By: ahekinci <ahekinci@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 21:17:24 by ebabaogl          #+#    #+#             */
-/*   Updated: 2025/06/19 15:23:02 by ahekinci         ###   ########.fr       */
+/*   Updated: 2025/06/19 17:04:03 by ahekinci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,24 +16,17 @@
 # define SCREEN_WIDTH 800
 # define SCREEN_HEIGHT 600
 
-# define CIRCLE_COLOR 0xFF0000
+# define MOVE_SPEED 5
 
-typedef struct s_data {
-	void *mlx;
-	void *win;
-	t_image img;
-	int x;
-	int y;
-	s_key_status key_status;
-} t_data;
+# define COLOR 0xFF0000
 
 typedef struct s_image {
-	void *img_ptr;
-	char *data;
+	void *img;
+	char *addr;
 	int width;
 	int height;
 	int bpp;
-	int size_line;
+	int line_length;
 	int endian;
 } t_image;
 
@@ -43,6 +36,15 @@ typedef struct s_key_status {
 	int key_s;
 	int key_d;
 } t_key_status;
+
+typedef struct s_data {
+	void *mlx;
+	void *win;
+	t_image img;
+	int x;
+	int y;
+	t_key_status key_status;
+} t_data;
 
 typedef struct s_circle {
 	int x;
@@ -65,7 +67,8 @@ typedef struct s_rectangle {
 // draw_circle((t_circle){.x = 400, .y = 300, .radius = 50, .color = CIRCLE_COLOR});
 
 
-void	draw_pixel_on_image(t_data *data, int x, int y, int color);
-void	draw_circle_on_image(t_data *data, int radius, int x, int y);
+void	draw_pixel_on_image(t_image *img, int color, int x, int y);
+void	draw_circle_on_image(t_image *img, t_circle *circle);
+void	draw_rectangle_on_image(t_image *img, t_rectangle *rect);
 
 #endif

@@ -6,14 +6,16 @@
 /*   By: ahekinci <ahekinci@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/19 01:26:50 by ahekinci          #+#    #+#             */
-/*   Updated: 2025/06/19 15:54:20 by ahekinci         ###   ########.fr       */
+/*   Updated: 2025/06/19 17:03:57 by ahekinci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "mlx.h"
 #include "cub3d.h"
 
-void	draw_pixel_on_image(t_imgage *img, int color, int x, int y)
+#include "stdio.h"
+
+void	draw_pixel_on_image(t_image *img, int color, int x, int y)
 {
 	char	*dst;
 
@@ -23,25 +25,37 @@ void	draw_pixel_on_image(t_imgage *img, int color, int x, int y)
 	*(unsigned int *)dst = color;
 }
 
+// void	draw_circle_on_image(t_image *img, t_circle *circle)
+// {
+// 	int	i;
+// 	int	j;
+
+// 	i = -(circle->radius);
+// 	if (circle->radius <= 0)
+// 		return ;
+// 	while (i <= circle->radius)
+// 	{
+// 		j = -(circle->radius);
+// 		while (j <= circle->radius)
+// 		{
+// 			if (i * i + j * j <= circle->radius * circle->radius)
+// 				draw_pixel_on_image(img, circle->color, circle->x + i, circle->y + j);
+// 			j++;
+// 		}
+// 		i++;
+// 	}
+// }
+
 void	draw_circle_on_image(t_image *img, t_circle *circle)
 {
-	int	i;
-	int	j;
-
-	if (circle->radius <= 0)
-		return ;
-	i = -circle->radius;
-	while (i <= circle->radius)
+	int i, j;
+	for (i = -circle->radius; i <= circle->radius; i++)
 	{
-		j = -circle->radius;
-		while (j <= circle->radius)
+		for (j = -circle->radius; j <= circle->radius; j++)
 		{
-			if (i * i + j * j <= circle->radius * circle->radius)
-				draw_pixel_on_image(img, circle->color,
-					circle->x + i, circle->y + j);
-			j++;
+			if (i*i + j*j <= circle->radius*circle->radius)
+				draw_pixel_on_image(img, circle->color, circle->x + i, circle->y + j);
 		}
-		i++;
 	}
 }
 

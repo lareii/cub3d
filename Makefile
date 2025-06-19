@@ -18,7 +18,7 @@ endif
 MLX			= $(MLX_DIR)/libmlx.a
 
 VPATH		= src
-SRCS		= main.c
+SRCS		= main.c draw.c
 OBJS		= $(addprefix $(BUILD_DIR)/,$(SRCS:.c=.o))
 
 CFLAGS		= -Wall -Wextra -Werror -I$(INC_DIR) -I$(GNL_DIR)
