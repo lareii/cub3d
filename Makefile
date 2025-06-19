@@ -26,9 +26,9 @@ LDFLAGS		= -L$(MLX_DIR)
 LDLIBS		= -lmlx -lm
 RM			= rm -rf
 ifeq ($(UNAME),Linux)
-	LDFLAGS	+= -lX11 -lXext
+	LDLIBS	+= -lXext -lX11 
 else ifeq ($(UNAME),Darwin)
-	LDFLAGS	+= -framework OpenGL -framework AppKit
+	LDLIBS	+= -framework OpenGL -framework AppKit
 endif
 
 all: $(NAME)
