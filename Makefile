@@ -21,7 +21,7 @@ VPATH		= src
 SRCS		= main.c
 OBJS		= $(addprefix $(BUILD_DIR)/,$(SRCS:.c=.o))
 
-CFLAGS		= -Wall -Wextra -Werror -I$(INC_DIR) -I$(GNL_DIR)
+CFLAGS		= -Wall -Wextra -Werror -I$(INC_DIR) -I$(MLX_DIR) -I$(GNL_DIR)
 LDFLAGS		= -L$(MLX_DIR)
 LDLIBS		= -lmlx -lm
 RM			= rm -rf
