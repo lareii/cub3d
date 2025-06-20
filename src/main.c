@@ -6,7 +6,7 @@
 /*   By: ahekinci <ahekinci@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/17 02:26:04 by ahekinci          #+#    #+#             */
-/*   Updated: 2025/06/19 17:03:46 by ahekinci         ###   ########.fr       */
+/*   Updated: 2025/06/20 14:17:45 by ahekinci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,20 +81,13 @@ int game_loop(t_data *data)
 	return 0;
 }
 
-// double get_time_in_seconds()
-// {
-// 	struct timeval tv;
-// 	gettimeofday(&tv, NULL);
-// 	return tv.tv_sec + tv.tv_usec / 1000000.0;
-// }
-
 void render(t_data *data)
 {
 	data->img.img = mlx_new_image(data->mlx, data->img.width, data->img.height);
 	data->img.addr = mlx_get_data_addr(data->img.img, &data->img.bpp, &data->img.line_length, &data->img.endian);
 	draw_circle_on_image(&(data->img), &(t_circle){.x = data->x, .y = data->y, .radius = 20, .color = COLOR});
-	mlx_put_image_to_window(data->mlx, data->win, data->img.addr, 0, 0);
-	mlx_destroy_image(data->mlx, data->img.addr);
+	mlx_put_image_to_window(data->mlx, data->win, data->img.img, 0, 0);
+	mlx_destroy_image(data->mlx, data->img.img);
 }
 
 int main(void)
