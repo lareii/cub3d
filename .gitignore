@@ -54,4 +54,4 @@ dkms.conf
 # Project specific
 .DS_Store
 build/
-cub3d
+cub3D
