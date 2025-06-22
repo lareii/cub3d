@@ -3,21 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   win_hooks.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ebabaogl <ebabaogl@student.42kocaeli.co    +#+  +:+       +#+        */
+/*   By: ahekinci <ahekinci@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/22 04:40:28 by ebabaogl          #+#    #+#             */
-/*   Updated: 2025/06/22 19:26:07 by ebabaogl         ###   ########.fr       */
+/*   Updated: 2025/06/23 00:36:51 by ahekinci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 #include "mlx.h"
+#include <stdlib.h>
 
 static int	destroy_handler(t_mlx *mlx)
 {
 	#if defined(__linux__)
 		mlx_loop_end(mlx->mlx_ptr);
 	#else
+		(void)mlx;
 		exit(1);
 	#endif
 	return (0);

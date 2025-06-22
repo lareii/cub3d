@@ -17,9 +17,11 @@ else ifeq ($(UNAME),Darwin)
 endif
 MLX			= $(MLX_DIR)/libmlx.a
 
-VPATH		= src:src/window:src/render
+VPATH		= src:src/window:src/render:src/parser:src/utils:$(GNL_DIR)
 SRCS		= main.c \
-			win_init.c win_utils.c win_hooks.c
+			win_init.c win_utils.c win_hooks.c \
+			filename_checker.c init_map.c init_textures.c parse_rgb.c \
+			atol.c split.c string.c
 OBJS		= $(addprefix $(BUILD_DIR)/,$(SRCS:.c=.o))
 
 CFLAGS		= -Wall -Wextra -Werror -I$(INC_DIR) -I$(MLX_DIR) -I$(GNL_DIR)
@@ -43,8 +45,8 @@ $(BUILD_DIR):
 $(BUILD_DIR)/%.o: %.c | $(BUILD_DIR)
 	$(CC) $(CFLAGS) -c $^ -o $@
 
-$(NAME): $(OBJS) $(MLX)
-	$(CC) $(CFLAGS) $(OBJS) $(LDFLAGS) $(LDLIBS) -o $(NAME)
+$(NAME): $(GNL_OBJS) $(OBJS) $(MLX)
+	$(CC) $(CFLAGS) $(GNL_OBJS) $(OBJS) $(LDFLAGS) $(LDLIBS) -o $(NAME)
 
 clean:
 	$(RM) $(BUILD_DIR)
