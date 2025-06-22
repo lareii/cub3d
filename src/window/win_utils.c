@@ -6,7 +6,7 @@
 /*   By: ebabaogl <ebabaogl@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/22 04:17:09 by ebabaogl          #+#    #+#             */
-/*   Updated: 2025/06/22 04:23:12 by ebabaogl         ###   ########.fr       */
+/*   Updated: 2025/06/22 19:28:02 by ebabaogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,11 @@ void	destroy_win(t_mlx *mlx)
 		mlx_destroy_window(mlx->mlx_ptr, mlx->win_ptr);
 	if (mlx->mlx_ptr)
 		#if defined(__linux__)
-		mlx_destroy_display(mlx->mlx_ptr); // temporary solution
+			mlx_destroy_display(mlx->mlx_ptr); 
+		#else
+			exit(1);
 		#endif
 	free(mlx->mlx_ptr);
+	free(mlx->keys);
+	free(mlx);
 }
