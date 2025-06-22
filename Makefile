@@ -17,8 +17,11 @@ else ifeq ($(UNAME),Darwin)
 endif
 MLX			= $(MLX_DIR)/libmlx.a
 
-VPATH		= src
-SRCS		= main.c draw.c
+VPATH		= src:src/window:src/render
+SRCS		= main.c \
+			win_init.c win_utils.c win_hooks.c \
+			render_init.c render.c \
+			draw.c init_map.c 
 OBJS		= $(addprefix $(BUILD_DIR)/,$(SRCS:.c=.o))
 
 CFLAGS		= -Wall -Wextra -Werror -I$(INC_DIR) -I$(MLX_DIR) -I$(GNL_DIR)

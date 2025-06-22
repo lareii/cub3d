@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "*.h": "c",
+        "*.tsx": "typescript",
+        "*.jsx": "javascript",
+        "*.bak": "c"
+    }
+}
