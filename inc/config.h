@@ -6,13 +6,14 @@
 /*   By: ebabaogl <ebabaogl@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/22 01:55:37 by ebabaogl          #+#    #+#             */
-/*   Updated: 2025/06/22 02:07:50 by ebabaogl         ###   ########.fr       */
+/*   Updated: 2025/06/22 04:15:30 by ebabaogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CONFIG_H
 # define CONFIG_H
 
+# define WINDOW_TITLE "kupucde"
 # define SCREEN_WIDTH 800
 # define SCREEN_HEIGHT 600
 

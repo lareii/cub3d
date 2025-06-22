@@ -6,7 +6,7 @@
 /*   By: ebabaogl <ebabaogl@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 21:17:24 by ebabaogl          #+#    #+#             */
-/*   Updated: 2025/06/22 02:47:38 by ebabaogl         ###   ########.fr       */
+/*   Updated: 2025/06/22 19:11:49 by ebabaogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ typedef struct s_player
 
 typedef struct s_map
 {
-	char	**map;
+	char	**data;
 	int		width;
 	int		height;
 	char	dir;
@@ -46,5 +46,10 @@ typedef struct s_data
 	t_map		*map;
 	t_textures	*textures;
 }	t_data;
+
+// window
+int		init_win(t_data *data);
+void	init_hooks(t_data *data);
+void	destroy_win(t_mlx *mlx);
 
 #endif
