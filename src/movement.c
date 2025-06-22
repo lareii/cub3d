@@ -6,7 +6,7 @@
 /*   By: ahekinci <ahekinci@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/21 22:04:45 by ahekinci          #+#    #+#             */
-/*   Updated: 2025/06/21 22:06:25 by ahekinci         ###   ########.fr       */
+/*   Updated: 2025/06/22 03:45:05 by ahekinci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,16 +33,16 @@
 int key_press(int keycode, t_data *data)
 {
 	if (keycode == KEY_W)
-		data->key_status.key_w = true;
+		data->mlx->keys->key_w = true;
 	if (keycode == KEY_A)
-		data->key_status.key_a = true;
+		data->mlx->keys->key_a = true;
 	if (keycode == KEY_S)
-		data->key_status.key_s = true;
+		data->mlx->keys->key_s = true;
 	if (keycode == KEY_D)
-		data->key_status.key_d = true;
+		data->mlx->keys->key_d = true;
 	if (keycode == KEY_ESC)
 	{
-		mlx_destroy_window(data->mlx, data->win);
+		mlx_destroy_window(data->mlx->mlx_ptr, data->mlx->win_ptr);
 		exit(0);
 	}
 	return 0;
@@ -51,12 +51,12 @@ int key_press(int keycode, t_data *data)
 int key_release(int keycode, t_data *data)
 {
 	if (keycode == KEY_W)
-		data->key_status.key_w = false;
+		data->mlx->keys->key_w = false;
 	if (keycode == KEY_A)
-		data->key_status.key_a = false;
+		data->mlx->keys->key_a = false;
 	if (keycode == KEY_S)
-		data->key_status.key_s = false;
+		data->mlx->keys->key_s = false;
 	if (keycode == KEY_D)
-		data->key_status.key_d = false;
+		data->mlx->keys->key_d = false;
 	return 0;
 }
