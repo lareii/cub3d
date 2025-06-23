@@ -6,7 +6,7 @@
 /*   By: ebabaogl <ebabaogl@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/22 20:15:22 by ahekinci          #+#    #+#             */
-/*   Updated: 2025/06/23 12:47:01 by ebabaogl         ###   ########.fr       */
+/*   Updated: 2025/06/23 22:48:10 by ebabaogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,11 +34,15 @@ static int	init_textures(void **data, char *line)
 {
 	char	*path;
 
-	path = ft_strtrim(line + 3, " \n"); // trim whitespaces or lf
-	if (!path)
-		return (0);
-	*data = path; // we cant set images from here, there is no mlx_ptr initalized
-	return (1);
+	if (!*data)
+	{
+		path = ft_strtrim(line + 3, " \n"); // trim whitespaces or lf
+		if (!path)
+			return (0);
+		*data = path; // we cant set images from here, there is no mlx_ptr initalized
+		return (1);
+	}
+	return (0);
 }
 
 static int	all_textures_set(t_textures *textures)
