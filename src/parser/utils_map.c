@@ -1,28 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   filename_checker.c                                 :+:      :+:    :+:   */
+/*   utils_map.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ahekinci <ahekinci@student.42kocaeli.co    +#+  +:+       +#+        */
+/*   By: ebabaogl <ebabaogl@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/22 19:47:23 by ahekinci          #+#    #+#             */
-/*   Updated: 2025/06/23 00:40:57 by ahekinci         ###   ########.fr       */
+/*   Updated: 2025/06/23 12:30:36 by ebabaogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include "cub3d.h"
-#include "get_next_line.h"
+#include "cub3d.h"
 #include <stddef.h>
+#include <stdlib.h>
 
 int	filename_checker(char *str)
 {
 	size_t	i;
 
-	if (ft_strlen(str) < 5)
+	if (ft_strlen_c(str) < 5)
 		return (0);
 	else
 	{	
-		i = ft_strlen(str) - 1;
+		i = ft_strlen_c(str) - 1;
 		if (!(str[i] == 'b' && str[i - 1] == 'u'
 				&& str[i - 2] == 'c' && str[i - 3] == '.'))
 			return (0);
@@ -30,4 +30,17 @@ int	filename_checker(char *str)
 			return (0);
 	}
 	return (1);
+}
+
+void	free_textures(t_textures *textures)
+{
+	if (textures->north)
+		free(textures->north);
+	if (textures->south)
+		free(textures->south);
+	if (textures->west)
+		free(textures->west);
+	if (textures->east)
+		free(textures->east);
+	free(textures);
 }

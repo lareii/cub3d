@@ -6,7 +6,7 @@
 /*   By: ebabaogl <ebabaogl@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/22 04:03:41 by ebabaogl          #+#    #+#             */
-/*   Updated: 2025/06/23 00:59:36 by ebabaogl         ###   ########.fr       */
+/*   Updated: 2025/06/23 12:47:29 by ebabaogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,8 @@ int	main(int argc, char **argv)
 		return (EXIT_FAILURE);
 	if (!init_win(&data))
 		return (EXIT_FAILURE);
+	free_textures(data.textures);
+	// free_map
+	// free_player ...
 	return (EXIT_SUCCESS);
 }

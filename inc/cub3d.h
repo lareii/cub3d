@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ahekinci <ahekinci@student.42kocaeli.co    +#+  +:+       +#+        */
+/*   By: ebabaogl <ebabaogl@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 21:17:24 by ebabaogl          #+#    #+#             */
-/*   Updated: 2025/06/23 00:50:16 by ahekinci         ###   ########.fr       */
+/*   Updated: 2025/06/23 12:30:48 by ebabaogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,12 +56,16 @@ void	destroy_win(t_mlx *mlx);
 // parser
 int		init_map_data(t_data *data, char **argv);
 int		filename_checker(char *str);
+void	free_textures(t_textures *textures);
 int		init_map_textures(t_data *data, int fd);
 int		str_to_rgb(char *str);
 
 // utils
+char	*ft_strchr_c(char *s, int c);
+char	*ft_strtrim(char const *s, char const *set);
 char	*ft_strdup(const char *s1);
 char	**ft_split(char const *s, char c);
 long	ft_atol(const char *str, int *err);
+size_t	ft_strlen_c(char const *s);
 
 #endif
