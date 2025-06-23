@@ -1,8 +1,16 @@
-#include <stdlib.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   split.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ebabaogl <ebabaogl@student.42kocaeli.co    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/06/23 12:55:23 by ebabaogl          #+#    #+#             */
+/*   Updated: 2025/06/23 12:55:47 by ebabaogl         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-static int	counter(char const *s, char c);
-static void	*free_all(char **arr, int i);
-static char	*new_str(char const *s, char c);
+#include <stdlib.h>
 
 static int	counter(char const *s, char c)
 {
