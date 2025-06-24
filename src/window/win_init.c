@@ -6,7 +6,7 @@
 /*   By: ahekinci <ahekinci@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/22 04:07:48 by ebabaogl          #+#    #+#             */
-/*   Updated: 2025/06/22 19:44:24 by ahekinci         ###   ########.fr       */
+/*   Updated: 2025/06/24 15:56:46 by ahekinci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,9 @@
 
 static int	init_keys(t_mlx *mlx)
 {
-	mlx->keys = malloc(sizeof(t_keys));
+	mlx->keys = ft_calloc_c(1, sizeof(t_keys));
 	if (!mlx->keys)
 		return (0);
-	mlx->keys->key_w = 0;
-	mlx->keys->key_a = 0;
-	mlx->keys->key_s = 0;
-	mlx->keys->key_d = 0;
 	return (1);
 }
 

@@ -6,7 +6,7 @@
 /*   By: ahekinci <ahekinci@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/22 04:03:41 by ebabaogl          #+#    #+#             */
-/*   Updated: 2025/06/24 13:53:36 by ahekinci         ###   ########.fr       */
+/*   Updated: 2025/06/24 15:59:45 by ahekinci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 
-static void	free_all(t_data *data)
+void	free_all(t_data *data)
 {
 	free_textures(data->textures);
 	free_map(data->map);
@@ -34,7 +34,5 @@ int	main(int argc, char **argv)
 	if (!init_win(&data))
 		return (EXIT_FAILURE);
 	free_all(&data);
-	// free_map
-	// free_player ...
 	return (EXIT_SUCCESS);
 }

@@ -6,7 +6,7 @@
 /*   By: ahekinci <ahekinci@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/22 19:47:23 by ahekinci          #+#    #+#             */
-/*   Updated: 2025/06/24 13:50:20 by ahekinci         ###   ########.fr       */
+/*   Updated: 2025/06/24 15:41:15 by ahekinci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,20 +34,20 @@ int	filename_checker(char *str)
 
 void	free_textures(t_textures *textures)
 {
-	if (textures->north)
+	if (textures && textures->north)
 		free(textures->north);
-	if (textures->south)
+	if (textures && textures->south)
 		free(textures->south);
-	if (textures->west)
+	if (textures && textures->west)
 		free(textures->west);
-	if (textures->east)
+	if (textures && textures->east)
 		free(textures->east);
 	free(textures);
 }
 
 void	free_map(t_map *map)
 {
-	if (map->data)
+	if (map && map->data)
 		free_str_arr(map->data);
 	free(map);
 }

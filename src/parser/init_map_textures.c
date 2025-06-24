@@ -6,7 +6,7 @@
 /*   By: ahekinci <ahekinci@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/22 20:15:22 by ahekinci          #+#    #+#             */
-/*   Updated: 2025/06/24 15:10:41 by ahekinci         ###   ########.fr       */
+/*   Updated: 2025/06/24 15:58:55 by ahekinci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,9 @@
 
 static int	set_textures(t_data *data)
 {
-	data->textures = malloc(sizeof(t_textures));
+	data->textures = ft_calloc_c(1, sizeof(t_textures));
 	if (!data->textures)
 		return (0);
-	data->textures->north = NULL;
-	data->textures->south = NULL;
-	data->textures->west = NULL;
-	data->textures->east = NULL;
 	data->textures->floor = -1;
 	data->textures->ceiling = -1;
 	return (1);
