@@ -6,7 +6,7 @@
 /*   By: ahekinci <ahekinci@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 21:17:24 by ebabaogl          #+#    #+#             */
-/*   Updated: 2025/06/24 15:54:52 by ahekinci         ###   ########.fr       */
+/*   Updated: 2025/06/24 16:49:01 by ahekinci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,8 @@ typedef struct s_player
 typedef struct s_map
 {
 	char	**data;
-	int		width;
-	int		height;
+	size_t	width;
+	size_t	height;
 	char	dir;
 }	t_map;
 
@@ -62,6 +62,7 @@ int		filename_checker(char *str);
 void	free_textures(t_textures *textures);
 int		init_map_textures(t_data *data, int fd);
 int		str_to_rgb(char *str);
+int		map_validator(t_map *map);
 
 // utils
 char	*ft_strchr_c(char *s, int c);

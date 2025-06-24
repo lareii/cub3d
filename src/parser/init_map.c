@@ -6,7 +6,7 @@
 /*   By: ahekinci <ahekinci@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/22 19:40:17 by ahekinci          #+#    #+#             */
-/*   Updated: 2025/06/24 15:59:29 by ahekinci         ###   ########.fr       */
+/*   Updated: 2025/06/24 16:11:26 by ahekinci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,10 @@ int	init_map(t_data *data, char **argv)
 		return (0);
 	}
 	close(fd);
+	if (!map_validator(data->map))
+	{
+		free_all(data);
+		return (0);
+	}
 	return (1);
 }

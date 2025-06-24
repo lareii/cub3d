@@ -6,7 +6,7 @@
 /*   By: ahekinci <ahekinci@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/24 15:16:11 by ahekinci          #+#    #+#             */
-/*   Updated: 2025/06/24 15:27:37 by ahekinci         ###   ########.fr       */
+/*   Updated: 2025/06/24 16:37:05 by ahekinci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,9 @@ int	init_map_data(t_map *map, int fd)
 		line = get_next_line(fd);
 		if (!line)
 			break ;
+		if (map->width < ft_strlen_c(trimmed))
+			map->width = ft_strlen_c(trimmed);
+		map->height++;
 	}
 	get_next_line(-1);
 	return (1);

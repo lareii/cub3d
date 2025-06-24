@@ -20,7 +20,7 @@ MLX			= $(MLX_DIR)/libmlx.a
 VPATH		= src:src/window:src/render:src/parser:src/utils:$(GNL_DIR)
 SRCS		= main.c \
 			win_init.c win_utils.c win_hooks.c \
-			utils_map.c init_map.c init_map_data.c init_map_textures.c parse_rgb.c \
+			utils_map.c init_map.c init_map_data.c init_map_textures.c parse_rgb.c map_validator.c \
 			atol.c split.c string.c
 OBJS		= $(addprefix $(BUILD_DIR)/,$(SRCS:.c=.o))
 
