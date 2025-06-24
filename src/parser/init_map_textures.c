@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init_textures.c                                    :+:      :+:    :+:   */
+/*   init_map_textures.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ebabaogl <ebabaogl@student.42kocaeli.co    +#+  +:+       +#+        */
+/*   By: ahekinci <ahekinci@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/22 20:15:22 by ahekinci          #+#    #+#             */
-/*   Updated: 2025/06/23 22:48:10 by ebabaogl         ###   ########.fr       */
+/*   Updated: 2025/06/24 12:25:30 by ahekinci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ static int	set_textures(t_data *data)
 	return (1);
 }
 
-static int	init_textures(void **data, char *line)
+static int	set_texture_path(void **data, char *line)
 {
 	char	*path;
 
@@ -56,13 +56,13 @@ static int	all_textures_set(t_textures *textures)
 static int	parse_textures(t_data *data, char *line)
 {
 	if (line[0] == 'N' && line[1] == 'O' && line[2] == ' ')
-		return (init_textures(&data->textures->north, line));
+		return (set_texture_path(&data->textures->north, line));
 	else if (line[0] == 'S' && line[1] == 'O' && line[2] == ' ')
-		return (init_textures(&data->textures->south, line));
+		return (set_texture_path(&data->textures->south, line));
 	else if (line[0] == 'W' && line[1] == 'E' && line[2] == ' ')
-		return (init_textures(&data->textures->west, line));
+		return (set_texture_path(&data->textures->west, line));
 	else if (line[0] == 'E' && line[1] == 'A' && line[2] == ' ')
-		return (init_textures(&data->textures->east, line));
+		return (set_texture_path(&data->textures->east, line));
 	else if (line[0] == 'F' && line[1] == ' ')
 	{
 		data->textures->floor = str_to_rgb(line + 2);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   string.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ebabaogl <ebabaogl@student.42kocaeli.co    +#+  +:+       +#+        */
+/*   By: ahekinci <ahekinci@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/22 20:31:29 by ahekinci          #+#    #+#             */
-/*   Updated: 2025/06/23 12:07:01 by ebabaogl         ###   ########.fr       */
+/*   Updated: 2025/06/24 12:26:07 by ahekinci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,4 +93,19 @@ char	*ft_strtrim(char *s, char *set)
 	ft_memcpy(str, s + left, len);
 	str[len] = '\0';
 	return (str);
+}
+
+void	free_str_arr(char **array)
+{
+	int	i;
+
+	if (!array)
+		return ;
+	i = 0;
+	while (array[i])
+	{
+		free(array[i]);
+		i++;
+	}
+	free(array);
 }

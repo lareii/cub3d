@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils_map.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ebabaogl <ebabaogl@student.42kocaeli.co    +#+  +:+       +#+        */
+/*   By: ahekinci <ahekinci@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/22 19:47:23 by ahekinci          #+#    #+#             */
-/*   Updated: 2025/06/23 12:30:36 by ebabaogl         ###   ########.fr       */
+/*   Updated: 2025/06/24 13:50:20 by ahekinci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,4 +43,11 @@ void	free_textures(t_textures *textures)
 	if (textures->east)
 		free(textures->east);
 	free(textures);
+}
+
+void	free_map(t_map *map)
+{
+	if (map->data)
+		free_str_arr(map->data);
+	free(map);
 }
