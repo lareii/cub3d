@@ -6,7 +6,7 @@
 /*   By: ahekinci <ahekinci@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/22 19:40:17 by ahekinci          #+#    #+#             */
-/*   Updated: 2025/06/24 13:54:40 by ahekinci         ###   ########.fr       */
+/*   Updated: 2025/06/24 15:08:05 by ahekinci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,10 +69,6 @@ static int	init_map_data(t_map *map, int fd)
 	}
 	while (1)
 	{
-		// line = get_next_line(fd);
-		// if (!line)
-		// 	break ;
-		printf("%s", line);
 		if (!(line[0] == '1' || line[0] == ' '))
 		{
 			free(line);

@@ -6,7 +6,7 @@
 /*   By: ahekinci <ahekinci@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/22 20:15:22 by ahekinci          #+#    #+#             */
-/*   Updated: 2025/06/24 12:25:30 by ahekinci         ###   ########.fr       */
+/*   Updated: 2025/06/24 15:10:41 by ahekinci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,10 +36,10 @@ static int	set_texture_path(void **data, char *line)
 
 	if (!*data)
 	{
-		path = ft_strtrim(line + 3, " \n"); // trim whitespaces or lf
+		path = ft_strtrim(line + 3, " \n");
 		if (!path)
 			return (0);
-		*data = path; // we cant set images from here, there is no mlx_ptr initalized
+		*data = path;
 		return (1);
 	}
 	return (0);
@@ -96,8 +96,8 @@ int	init_map_textures(t_data *data, int fd)
 		if (all_textures_set(data->textures))
 			break ;
 	}
-	get_next_line(-1); // gnl leaks for static value here, so we pass -1 for free buffer
-	if (!all_textures_set(data->textures)) // check for missing value
+	get_next_line(-1);
+	if (!all_textures_set(data->textures))
 	{
 		free_textures(data->textures);
 		return (0);
