@@ -6,7 +6,7 @@
 /*   By: ahekinci <ahekinci@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/24 15:16:11 by ahekinci          #+#    #+#             */
-/*   Updated: 2025/06/24 16:37:05 by ahekinci         ###   ########.fr       */
+/*   Updated: 2025/06/25 20:41:46 by ahekinci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ int	init_map_data(t_map *map, int fd)
 	map->data = NULL;
 	if (!skip_newlines(fd, &line))
 		return (0);
+	map->height = 1;
 	while (1)
 	{
 		if (!(line[0] == '1' || line[0] == ' '))
