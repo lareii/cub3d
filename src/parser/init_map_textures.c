@@ -6,7 +6,7 @@
 /*   By: ahekinci <ahekinci@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/22 20:15:22 by ahekinci          #+#    #+#             */
-/*   Updated: 2025/06/25 22:07:11 by ahekinci         ###   ########.fr       */
+/*   Updated: 2025/06/25 20:48:42 by ahekinci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,12 +61,12 @@ static int	parse_textures(t_data *data, char *line)
 		return (set_texture_path(&data->textures->east, line));
 	else if (line[0] == 'F' && line[1] == ' ')
 	{
-		data->textures->floor = str_to_rgb(line + 2);
+		data->textures->floor = str_to_rgb(ft_strtrim(line + 2, " \n"));
 		return (data->textures->floor != -1);
 	}
 	else if (line[0] == 'C' && line[1] == ' ')
 	{
-		data->textures->ceiling = str_to_rgb(line + 2);
+		data->textures->ceiling = str_to_rgb(ft_strtrim(line + 2, " \n"));
 		return (data->textures->ceiling != -1);
 	}
 	return (0);

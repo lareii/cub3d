@@ -6,7 +6,7 @@
 /*   By: ahekinci <ahekinci@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/22 23:19:17 by ahekinci          #+#    #+#             */
-/*   Updated: 2025/06/24 12:25:31 by ahekinci         ###   ########.fr       */
+/*   Updated: 2025/06/25 20:50:07 by ahekinci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,17 +40,24 @@ int	str_to_rgb(char *str)
 	int		g;
 	int		b;
 
+	if (!str)
+		return (0);
 	rgb_values = ft_split(str, ',');
 	if (!rgb_values)
+	{
+		free(str);
 		return (0);
+	}
 	r = parse_rgb_value(rgb_values[0]);
 	g = parse_rgb_value(rgb_values[1]);
 	b = parse_rgb_value(rgb_values[2]);
 	if (r == -1 || g == -1 || b == -1)
 	{
 		free_str_arr(rgb_values);
+		free(str);
 		return (0);
 	}
 	free_str_arr(rgb_values);
+	free(str);
 	return (rgb_to_int(r, g, b));
 }

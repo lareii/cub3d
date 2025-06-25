@@ -6,7 +6,7 @@
 /*   By: ahekinci <ahekinci@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 21:17:24 by ebabaogl          #+#    #+#             */
-/*   Updated: 2025/06/25 22:10:35 by ahekinci         ###   ########.fr       */
+/*   Updated: 2025/06/25 20:26:34 by ahekinci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,9 +60,8 @@ int		init_map_data(t_map *map, int fd);
 int		init_map(t_data *data, char **argv);
 int		init_player(t_data *data, size_t x, size_t y);
 int		filename_checker(char *str);
-void	free_textures(t_textures *textures);
-void	free_player(t_player *player);
-void	free_map(t_map *map);
+void	free_textures(t_data *data);
+void	free_player(t_data *data);
 int		init_map_textures(t_data *data, int fd);
 int		str_to_rgb(char *str);
 int		map_validator(t_data *data);
@@ -76,7 +75,7 @@ void	*ft_calloc_c(size_t count, size_t size);
 long	ft_atol(const char *str, int *err);
 size_t	ft_strlen_c(char const *s);
 void	free_str_arr(char **array);
-void	free_map(t_map *map);
+void	free_map(t_data *data);
 
 size_t	str_arr_len(char **arr);
 char	**str_arr_join(char **arr, char *line);
