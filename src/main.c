@@ -6,7 +6,7 @@
 /*   By: ahekinci <ahekinci@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/22 04:03:41 by ebabaogl          #+#    #+#             */
-/*   Updated: 2025/06/24 15:59:45 by ahekinci         ###   ########.fr       */
+/*   Updated: 2025/06/25 22:17:34 by ahekinci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,21 +18,26 @@ void	free_all(t_data *data)
 {
 	free_textures(data->textures);
 	free_map(data->map);
+	free_player(data->player);
+	free(data);
 }
 
 int	main(int argc, char **argv)
 {
-	t_data	data;
+	t_data	*data;
 
+	data = ft_calloc_c(1, sizeof(t_data));
+	if (!data)
+		return (EXIT_FAILURE);
 	if (argc != 2)
 	{
 		write(2, "Error\n", 6);
 		return (EXIT_FAILURE);
 	}
-	if (!init_map(&data, argv))
+	if (!init_map(data, argv))
 		return (EXIT_FAILURE);
-	if (!init_win(&data))
+	if (!init_win(data))
 		return (EXIT_FAILURE);
-	free_all(&data);
+	free_all(data);
 	return (EXIT_SUCCESS);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   config.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ebabaogl <ebabaogl@student.42kocaeli.co    +#+  +:+       +#+        */
+/*   By: ahekinci <ahekinci@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/22 01:55:37 by ebabaogl          #+#    #+#             */
-/*   Updated: 2025/06/22 04:15:30 by ebabaogl         ###   ########.fr       */
+/*   Updated: 2025/06/25 21:59:19 by ahekinci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 # define FOV 66
 // double fov_deg = 66.0;
 // double fov_rad = fov_deg * M_PI / 180.0;
-// double planeY = tan(fov_rad / 2.0); // sonuç ≈ 0.66
+// double plane_y = tan(fov_rad / 2.0); // sonuç ≈ 0.66
 
 # define WALL_COLLISION_PAD 1.0 // ayarla sonra
 

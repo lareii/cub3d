@@ -6,7 +6,7 @@
 /*   By: ahekinci <ahekinci@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 21:17:24 by ebabaogl          #+#    #+#             */
-/*   Updated: 2025/06/25 20:36:47 by ahekinci         ###   ########.fr       */
+/*   Updated: 2025/06/25 22:10:35 by ahekinci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,14 +22,14 @@
 
 typedef struct s_player
 {
-	double	posX;
-	double	posY;
-	double	dirX;
-	double	dirY;
-	double	planeX;
-	double	planeY;
-	double	rayDirX; // fonksiyon icine at duruma gore
-	double	rayDirY;
+	double	pos_x;
+	double	pos_y;
+	double	dir_x;
+	double	dir_y;
+	double	plane_x;
+	double	plane_y;
+	double	raydir_x; // fonksiyon icine at duruma gore
+	double	raydir_y;
 }	t_player;
 
 typedef struct s_map
@@ -61,6 +61,8 @@ int		init_map(t_data *data, char **argv);
 int		init_player(t_data *data, size_t x, size_t y);
 int		filename_checker(char *str);
 void	free_textures(t_textures *textures);
+void	free_player(t_player *player);
+void	free_map(t_map *map);
 int		init_map_textures(t_data *data, int fd);
 int		str_to_rgb(char *str);
 int		map_validator(t_data *data);

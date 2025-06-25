@@ -6,7 +6,7 @@
 /*   By: ahekinci <ahekinci@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/22 19:47:23 by ahekinci          #+#    #+#             */
-/*   Updated: 2025/06/24 15:41:15 by ahekinci         ###   ########.fr       */
+/*   Updated: 2025/06/25 22:11:57 by ahekinci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,12 +42,20 @@ void	free_textures(t_textures *textures)
 		free(textures->west);
 	if (textures && textures->east)
 		free(textures->east);
-	free(textures);
+	if (textures)
+		free(textures);
 }
 
 void	free_map(t_map *map)
 {
 	if (map && map->data)
 		free_str_arr(map->data);
-	free(map);
+	if (map)
+		free(map);
+}
+
+void	free_player(t_player *player)
+{
+	if (player)
+		free(player);
 }

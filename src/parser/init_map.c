@@ -6,7 +6,7 @@
 /*   By: ahekinci <ahekinci@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/22 19:40:17 by ahekinci          #+#    #+#             */
-/*   Updated: 2025/06/25 20:32:10 by ahekinci         ###   ########.fr       */
+/*   Updated: 2025/06/25 22:16:43 by ahekinci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include <unistd.h>
 
 int	init_map(t_data *data, char **argv)
-{	
+{
 	int		fd;
 
 	if (!filename_checker(argv[1]))
@@ -26,6 +26,7 @@ int	init_map(t_data *data, char **argv)
 		return (0);
 	if (!init_map_textures(data, fd))
 	{
+		free_all(data);
 		close(fd);
 		return (0);
 	}

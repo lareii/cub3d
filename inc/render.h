@@ -6,12 +6,12 @@
 /*   By: ahekinci <ahekinci@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/22 01:55:53 by ebabaogl          #+#    #+#             */
-/*   Updated: 2025/06/22 03:38:25 by ahekinci         ###   ########.fr       */
+/*   Updated: 2025/06/25 22:01:04 by ahekinci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DRAW_H
-# define DRAW_H
+#ifndef RENDER_H
+# define RENDER_H
 
 typedef struct s_textures
 {
@@ -34,14 +34,16 @@ typedef struct s_image
 	int		endian;
 }	t_image;
 
-typedef struct s_circle {
+typedef struct s_circle
+{
 	int	x;
 	int	y;
 	int	radius;
 	int	color;
-} t_circle;
+}	t_circle;
 
-typedef struct s_rectangle {
+typedef struct s_rectangle
+{
 	int	x;
 	int	y;
 	int	width;

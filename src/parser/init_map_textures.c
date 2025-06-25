@@ -6,7 +6,7 @@
 /*   By: ahekinci <ahekinci@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/22 20:15:22 by ahekinci          #+#    #+#             */
-/*   Updated: 2025/06/24 15:58:55 by ahekinci         ###   ########.fr       */
+/*   Updated: 2025/06/25 22:07:11 by ahekinci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,9 +94,6 @@ int	init_map_textures(t_data *data, int fd)
 	}
 	get_next_line(-1);
 	if (!all_textures_set(data->textures))
-	{
-		free_textures(data->textures);
 		return (0);
-	}
 	return (1);
 }
