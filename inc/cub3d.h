@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ebabaogl <ebabaogl@student.42kocaeli.co    +#+  +:+       +#+        */
+/*   By: ahekinci <ahekinci@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 21:17:24 by ebabaogl          #+#    #+#             */
-/*   Updated: 2025/06/26 11:48:12 by ebabaogl         ###   ########.fr       */
+/*   Updated: 2025/06/26 14:27:24 by ahekinci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,24 @@
 
 # define PI 3.14159265358979323846
 
+typedef struct s_ray
+{
+	double	camera_x;
+	double	dir_x;
+	double	dir_y;
+	int		map_x;
+	int		map_y;
+	double	side_dist_x;
+	double	side_dist_y;
+	double	delta_dist_x;
+	double	delta_dist_y;
+	int		step_x;
+	int		step_y;
+	int		hit;
+	int		side;
+	double	perp_wall_dist;
+}	t_ray;
+
 typedef struct s_player
 {
 	double	pos_x;
@@ -29,8 +47,6 @@ typedef struct s_player
 	double	dir_y;
 	double	plane_x;
 	double	plane_y;
-	double	raydir_x; // fonksiyon icine at duruma gore
-	double	raydir_y;
 }	t_player;
 
 typedef struct s_map
@@ -67,5 +83,13 @@ void	free_player(t_data *data);
 int		init_map_textures(t_data *data, int fd);
 int		str_to_rgb(char *str);
 int		map_validator(t_data *data);
+
+// render
+int		game_loop(t_data *data);
+void	draw_pixel_on_image(t_image *img, int color, int x, int y);
+void	draw_circle_on_image(t_image *img, t_circle *circle);
+void	draw_rectangle_on_image(t_image *img, t_rectangle *rect);
+void	raycaster(t_data *data);
+
 
 #endif

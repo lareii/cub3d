@@ -6,7 +6,7 @@
 /*   By: ahekinci <ahekinci@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/22 23:19:17 by ahekinci          #+#    #+#             */
-/*   Updated: 2025/06/25 20:50:07 by ahekinci         ###   ########.fr       */
+/*   Updated: 2025/06/26 15:55:52 by ahekinci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ static int	parse_rgb_value(char *str)
 		if (err == -1 || value < 0 || value > 255)
 			return (-1);
 	}
-	return (1);
+	return (value);
 }
 
 int	str_to_rgb(char *str)

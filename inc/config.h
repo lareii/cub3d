@@ -6,7 +6,7 @@
 /*   By: ahekinci <ahekinci@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/22 01:55:37 by ebabaogl          #+#    #+#             */
-/*   Updated: 2025/06/25 21:59:19 by ahekinci         ###   ########.fr       */
+/*   Updated: 2025/06/26 16:14:29 by ahekinci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,7 @@
 
 # define MOVE_SPEED_FACTOR 5.0
 # define ROT_SPEED_FACTOR 3.0
-# define FOV 66
-// double fov_deg = 66.0;
-// double fov_rad = fov_deg * M_PI / 180.0;
-// double plane_y = tan(fov_rad / 2.0); // sonuç ≈ 0.66
+# define FOV 66.0
 
 # define WALL_COLLISION_PAD 1.0 // ayarla sonra
 

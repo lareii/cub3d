@@ -6,7 +6,7 @@
 /*   By: ahekinci <ahekinci@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/22 04:03:41 by ebabaogl          #+#    #+#             */
-/*   Updated: 2025/06/25 20:25:48 by ahekinci         ###   ########.fr       */
+/*   Updated: 2025/06/26 12:07:17 by ahekinci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,8 @@ int	main(int argc, char **argv)
 	}
 	if (!init_map(data, argv))
 		return (EXIT_FAILURE);
-	// if (!init_win(data))
-	// 	return (EXIT_FAILURE);
+	if (!init_win(data))
+		return (EXIT_FAILURE);
 	free_all(data);
 	return (EXIT_SUCCESS);
 }

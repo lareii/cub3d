@@ -6,7 +6,7 @@
 /*   By: ahekinci <ahekinci@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/22 04:40:28 by ebabaogl          #+#    #+#             */
-/*   Updated: 2025/06/23 00:36:51 by ahekinci         ###   ########.fr       */
+/*   Updated: 2025/06/26 12:07:17 by ahekinci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,6 @@ void	init_hooks(t_data *data)
 	mlx_hook(data->mlx->win_ptr, 17, 0, destroy_handler, data->mlx);
 	mlx_hook(data->mlx->win_ptr, 2, 1L << 0, key_press, data->mlx);
 	mlx_hook(data->mlx->win_ptr, 3, 1L << 1, key_release, data->mlx);
-	// mlx_loop_hook(data->mlx->mlx_ptr, game_loop, data);
+	mlx_loop_hook(data->mlx->mlx_ptr, game_loop, data);
 	mlx_loop(data->mlx->mlx_ptr);
 }
