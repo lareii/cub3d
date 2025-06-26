@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_map_textures.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ahekinci <ahekinci@student.42kocaeli.co    +#+  +:+       +#+        */
+/*   By: ebabaogl <ebabaogl@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/22 20:15:22 by ahekinci          #+#    #+#             */
-/*   Updated: 2025/06/25 20:48:42 by ahekinci         ###   ########.fr       */
+/*   Updated: 2025/06/26 21:07:51 by ebabaogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,6 @@ int	init_map_textures(t_data *data, int fd)
 		if (all_textures_set(data->textures))
 			break ;
 	}
-	get_next_line(-1);
 	if (!all_textures_set(data->textures))
 		return (0);
 	return (1);
