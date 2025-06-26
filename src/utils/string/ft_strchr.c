@@ -1,30 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   win_utils.c                                        :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ebabaogl <ebabaogl@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/22 04:17:09 by ebabaogl          #+#    #+#             */
-/*   Updated: 2025/06/26 11:34:18 by ebabaogl         ###   ########.fr       */
+/*   Created: 2025/06/26 11:37:20 by ebabaogl          #+#    #+#             */
+/*   Updated: 2025/06/26 11:37:59 by ebabaogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "window.h"
-#include "mlx.h"
-#include <stdlib.h>
+#include <stddef.h>
 
-void	destroy_win(t_mlx *mlx)
+char	*ft_strchr_c(char *s, int c)
 {
-	if (mlx->win_ptr)
-		mlx_destroy_window(mlx->mlx_ptr, mlx->win_ptr);
-	if (mlx->mlx_ptr)
-		#if defined(__linux__)
-			mlx_destroy_display(mlx->mlx_ptr);
-		#else
-			exit(1);
-		#endif
-	free(mlx->mlx_ptr);
-	free(mlx->keys);
-	free(mlx);
+	unsigned char	uc;
+
+	uc = (unsigned char)c;
+	while (*s && *s != uc)
+		s++;
+	if (*s == uc || !uc)
+		return ((char *)s);
+	return (NULL);
 }

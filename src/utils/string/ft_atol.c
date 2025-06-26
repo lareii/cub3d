@@ -6,11 +6,10 @@
 /*   By: ebabaogl <ebabaogl@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/22 20:48:03 by ahekinci          #+#    #+#             */
-/*   Updated: 2025/06/23 12:55:55 by ebabaogl         ###   ########.fr       */
+/*   Updated: 2025/06/26 11:41:31 by ebabaogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
 #include <limits.h>
 
 static int	skip_whitespace(const char *c)

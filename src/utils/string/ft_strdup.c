@@ -1,30 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   win_utils.c                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ebabaogl <ebabaogl@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/22 04:17:09 by ebabaogl          #+#    #+#             */
-/*   Updated: 2025/06/26 11:34:18 by ebabaogl         ###   ########.fr       */
+/*   Created: 2025/06/26 11:35:40 by ebabaogl          #+#    #+#             */
+/*   Updated: 2025/06/26 11:36:56 by ebabaogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "window.h"
-#include "mlx.h"
 #include <stdlib.h>
 
-void	destroy_win(t_mlx *mlx)
+char	*ft_strdup(char *s1)
 {
-	if (mlx->win_ptr)
-		mlx_destroy_window(mlx->mlx_ptr, mlx->win_ptr);
-	if (mlx->mlx_ptr)
-		#if defined(__linux__)
-			mlx_destroy_display(mlx->mlx_ptr);
-		#else
-			exit(1);
-		#endif
-	free(mlx->mlx_ptr);
-	free(mlx->keys);
-	free(mlx);
+	size_t	len;
+	size_t	i;
+	char	*str;
+
+	len = 0;
+	while (s1[len] != '\0')
+		len++;
+	str = (char *)malloc(len + 1);
+	if (!str)
+		return (NULL);
+	i = 0;
+	while (i <= len)
+	{
+		str[i] = s1[i];
+		i++;
+	}
+	return (str);
 }
