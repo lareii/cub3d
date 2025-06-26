@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   raycaster.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ahekinci <ahekinci@student.42kocaeli.co    +#+  +:+       +#+        */
+/*   By: ebabaogl <ebabaogl@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 14:12:14 by ahekinci          #+#    #+#             */
-/*   Updated: 2025/06/26 16:12:55 by ahekinci         ###   ########.fr       */
+/*   Updated: 2025/06/26 17:43:50 by ebabaogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,8 @@ static void	perform_dda(t_ray *ray, char **map)
 			ray->map_y += ray->step_y;
 			ray->side = 1;
 		}
-		if (map[ray->map_y][ray->map_x] == '1')
+		if ((size_t)ray->map_x >= ft_strlen_c(map[ray->map_y])
+			|| map[ray->map_y][ray->map_x] == '1')
 			ray->hit = 1;
 	}
 	if (ray->side == 0)

@@ -6,7 +6,7 @@
 /*   By: ebabaogl <ebabaogl@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 11:38:54 by ebabaogl          #+#    #+#             */
-/*   Updated: 2025/06/26 11:38:55 by ebabaogl         ###   ########.fr       */
+/*   Updated: 2025/06/26 18:01:03 by ebabaogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ static int	counter(char const *s, char c)
 	return (spaces);
 }
 
-static void	*free_all(char **arr, int i)
+static void	*free_str_all(char **arr, int i)
 {
 	while (i >= 0)
 	{
@@ -79,7 +79,7 @@ char	**ft_split(char const *s, char c)
 		{
 			arr[j] = new_str(s, c);
 			if (!arr[j])
-				return (free_all(arr, j));
+				return (free_str_all(arr, j));
 			j++;
 		}
 		while (*s && *s != c)

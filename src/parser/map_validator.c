@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   map_validator.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ahekinci <ahekinci@student.42kocaeli.co    +#+  +:+       +#+        */
+/*   By: ebabaogl <ebabaogl@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/24 16:08:23 by ahekinci          #+#    #+#             */
-/*   Updated: 2025/06/25 20:07:21 by ahekinci         ###   ########.fr       */
+/*   Updated: 2025/06/26 18:08:52 by ebabaogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ static int	check_map_walls(t_map *map)
 	while (y < map->height)
 	{
 		x = 0;
-		while (map->data[y][x] && x < ft_strlen_c(map->data[y]))
+		while (x < ft_strlen_c(map->data[y]))
 		{
 			if (map->data[y][x] == '0')
 			{

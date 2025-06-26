@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ahekinci <ahekinci@student.42kocaeli.co    +#+  +:+       +#+        */
+/*   By: ebabaogl <ebabaogl@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/22 04:03:41 by ebabaogl          #+#    #+#             */
-/*   Updated: 2025/06/26 12:07:17 by ahekinci         ###   ########.fr       */
+/*   Updated: 2025/06/26 17:57:41 by ebabaogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,11 @@ int	main(int argc, char **argv)
 		write(2, "Error\n", 6);
 		return (EXIT_FAILURE);
 	}
-	if (!init_map(data, argv))
+	if (!init_map(data, argv) || !init_win(data))
+	{
+		free_all(data);
 		return (EXIT_FAILURE);
-	if (!init_win(data))
-		return (EXIT_FAILURE);
+	}
 	free_all(data);
 	return (EXIT_SUCCESS);
 }

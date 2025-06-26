@@ -6,7 +6,7 @@
 /*   By: ebabaogl <ebabaogl@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/22 19:40:17 by ahekinci          #+#    #+#             */
-/*   Updated: 2025/06/26 11:52:25 by ebabaogl         ###   ########.fr       */
+/*   Updated: 2025/06/26 18:02:51 by ebabaogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,22 +33,17 @@ int	init_map(t_data *data, char **argv)
 		return (0);
 	if (!init_map_textures(data, fd))
 	{
-		free_all(data);
 		close(fd);
 		return (0);
 	}
 	data->map = ft_calloc_c(1, sizeof(t_map));
 	if (!init_map_data(data->map, fd) || !data->map)
 	{
-		free_all(data);
 		close(fd);
 		return (0);
 	}
 	close(fd);
 	if (!map_validator(data))
-	{
-		free_all(data);
 		return (0);
-	}
 	return (1);
 }
