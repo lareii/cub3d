@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   config.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ahekinci <ahekinci@student.42kocaeli.co    +#+  +:+       +#+        */
+/*   By: ebabaogl <ebabaogl@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/22 01:55:37 by ebabaogl          #+#    #+#             */
-/*   Updated: 2025/06/26 16:14:29 by ahekinci         ###   ########.fr       */
+/*   Updated: 2025/06/26 21:32:16 by ebabaogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,5 @@
 # define FOV 66.0
 
 # define WALL_COLLISION_PAD 1.0 // ayarla sonra
-
-# define MINIMAP_WIDTH 100
-# define MINIMAP_HEIGHT 100
-# define MINIMAP_TILE_SIZE 10
-# define MINIMAP_PLAYER_COLOR 0xFF0000
-# define MINIMAP_PLAYER_RADIUS 2
 
 #endif
