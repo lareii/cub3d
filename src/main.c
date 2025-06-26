@@ -6,7 +6,7 @@
 /*   By: ebabaogl <ebabaogl@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/22 04:03:41 by ebabaogl          #+#    #+#             */
-/*   Updated: 2025/06/26 17:57:41 by ebabaogl         ###   ########.fr       */
+/*   Updated: 2025/06/26 21:45:50 by ebabaogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ void	free_all(t_data *data)
 	free_textures(data);
 	free_map(data);
 	free_player(data);
+	destroy_win(data->mlx);
 	free(data);
 }
 
