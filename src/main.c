@@ -6,7 +6,7 @@
 /*   By: ebabaogl <ebabaogl@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/22 04:03:41 by ebabaogl          #+#    #+#             */
-/*   Updated: 2025/06/26 21:45:50 by ebabaogl         ###   ########.fr       */
+/*   Updated: 2025/06/27 12:59:59 by ebabaogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ int	main(int argc, char **argv)
 	}
 	if (!init_map(data, argv) || !init_win(data))
 	{
+		write(2, "Error\n", 6);
 		free_all(data);
 		return (EXIT_FAILURE);
 	}
