@@ -6,7 +6,7 @@
 /*   By: ahekinci <ahekinci@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 21:17:24 by ebabaogl          #+#    #+#             */
-/*   Updated: 2025/06/28 15:35:14 by ahekinci         ###   ########.fr       */
+/*   Updated: 2025/06/28 17:39:32 by ahekinci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,7 @@ int		init_win(t_data *data);
 void	init_hooks(t_data *data);
 void	destroy_win(t_mlx *mlx);
 double	get_time_in_seconds(void);
+int		init_mlx(t_data *data);
 
 // parser
 int		init_map_data(t_map *map, int fd);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ebabaogl <ebabaogl@student.42kocaeli.co    +#+  +:+       +#+        */
+/*   By: ahekinci <ahekinci@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/22 04:03:41 by ebabaogl          #+#    #+#             */
-/*   Updated: 2025/06/27 12:59:59 by ebabaogl         ###   ########.fr       */
+/*   Updated: 2025/06/28 17:36:48 by ahekinci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int	main(int argc, char **argv)
 		write(2, "Error\n", 6);
 		return (EXIT_FAILURE);
 	}
-	if (!init_map(data, argv) || !init_win(data))
+	if (!init_mlx(data) || !init_map(data, argv) || !init_win(data))
 	{
 		write(2, "Error\n", 6);
 		free_all(data);

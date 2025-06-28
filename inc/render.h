@@ -6,7 +6,7 @@
 /*   By: ahekinci <ahekinci@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/22 01:55:53 by ebabaogl          #+#    #+#             */
-/*   Updated: 2025/06/28 15:13:35 by ahekinci         ###   ########.fr       */
+/*   Updated: 2025/06/28 17:30:41 by ahekinci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,16 +31,6 @@ typedef struct s_ray
 	double	perp_wall_dist;
 }	t_ray;
 
-typedef struct s_textures
-{
-	void	*north;
-	void	*south;
-	void	*west;
-	void	*east;
-	int		floor;
-	int		ceiling;
-}	t_textures;
-
 typedef struct s_image
 {
 	void	*img_ptr;
@@ -51,5 +41,15 @@ typedef struct s_image
 	int		size_line;
 	int		endian;
 }	t_image;
+
+typedef struct s_textures
+{
+	t_image	*north;
+	t_image	*south;
+	t_image	*west;
+	t_image	*east;
+	int		floor;
+	int		ceiling;
+}	t_textures;
 
 #endif
