@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse_rgb.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ahekinci <ahekinci@student.42kocaeli.co    +#+  +:+       +#+        */
+/*   By: ebabaogl <ebabaogl@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/22 23:19:17 by ahekinci          #+#    #+#             */
-/*   Updated: 2025/06/26 15:55:52 by ahekinci         ###   ########.fr       */
+/*   Updated: 2025/06/28 19:34:51 by ebabaogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ static int	parse_rgb_value(char *str)
 	int	value;
 
 	err = 0;
+	value = 0;
 	if (str)
 	{
 		value = ft_atol(str, &err);
