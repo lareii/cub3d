@@ -6,7 +6,7 @@
 /*   By: ahekinci <ahekinci@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/22 04:40:28 by ebabaogl          #+#    #+#             */
-/*   Updated: 2025/06/26 12:07:17 by ahekinci         ###   ########.fr       */
+/*   Updated: 2025/06/28 13:15:10 by ahekinci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,10 @@ static int key_press(int keycode, t_mlx *mlx)
 		mlx->keys->key_s = 1;
 	if (keycode == KEY_D)
 		mlx->keys->key_d = 1;
+	if (keycode == KEY_LEFT)
+		mlx->keys->key_left = 1;
+	if (keycode == KEY_RIGHT)
+		mlx->keys->key_right = 1;
 	return (0);
 }
 
@@ -48,6 +52,10 @@ static int key_release(int keycode, t_mlx *mlx)
 		mlx->keys->key_s = 0;
 	if (keycode == KEY_D)
 		mlx->keys->key_d = 0;
+	if (keycode == KEY_LEFT)
+		mlx->keys->key_left = 0;
+	if (keycode == KEY_RIGHT)
+		mlx->keys->key_right = 0;
 	if (keycode == KEY_ESC)
 		destroy_handler(mlx);
 	return (0);

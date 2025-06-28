@@ -3,16 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   win_utils.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ebabaogl <ebabaogl@student.42kocaeli.co    +#+  +:+       +#+        */
+/*   By: ahekinci <ahekinci@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/22 04:17:09 by ebabaogl          #+#    #+#             */
-/*   Updated: 2025/06/26 21:45:33 by ebabaogl         ###   ########.fr       */
+/*   Updated: 2025/06/28 12:37:22 by ahekinci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "window.h"
 #include "mlx.h"
 #include <stdlib.h>
+#include <sys/time.h>
 
 void	destroy_win(t_mlx *mlx)
 {
@@ -32,4 +33,12 @@ void	destroy_win(t_mlx *mlx)
 		free(mlx->keys);
 	if (mlx)
 		free(mlx);
+}
+
+double	get_time_in_seconds()
+{
+	struct timeval	tv;
+
+	gettimeofday(&tv, NULL);
+	return tv.tv_sec + tv.tv_usec / 1000000.0;
 }

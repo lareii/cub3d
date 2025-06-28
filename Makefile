@@ -21,7 +21,7 @@ VPATH		= src:src/window:src/render:src/parser:src/utils/memory:src/utils/string:
 SRCS		= main.c \
 			win_init.c win_utils.c win_hooks.c \
 			utils_map.c init_map.c init_map_data.c init_map_textures.c parse_rgb.c map_validator.c init_player.c \
-			draw.c render.c raycaster.c \
+			draw.c render.c raycaster.c handle_movement.c \
 			ft_calloc.c ft_memcpy.c \
 			ft_atol.c ft_split.c ft_strchr.c ft_strdup.c ft_strlen.c ft_strtrim.c str_arr.c
 OBJS		= $(addprefix $(BUILD_DIR)/,$(SRCS:.c=.o))
