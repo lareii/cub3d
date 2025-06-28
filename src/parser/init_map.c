@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_map.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ebabaogl <ebabaogl@student.42kocaeli.co    +#+  +:+       +#+        */
+/*   By: ahekinci <ahekinci@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/22 19:40:17 by ahekinci          #+#    #+#             */
-/*   Updated: 2025/06/26 18:02:51 by ebabaogl         ###   ########.fr       */
+/*   Updated: 2025/06/28 15:01:52 by ahekinci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ static int	init_file(int *fd, char *filename)
 int	init_map(t_data *data, char **argv)
 {
 	int		fd;
-	
+
 	if (!init_file(&fd, argv[1]))
 		return (0);
 	if (!init_map_textures(data, fd))

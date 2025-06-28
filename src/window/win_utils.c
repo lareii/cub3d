@@ -6,7 +6,7 @@
 /*   By: ahekinci <ahekinci@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/22 04:17:09 by ebabaogl          #+#    #+#             */
-/*   Updated: 2025/06/28 12:37:22 by ahekinci         ###   ########.fr       */
+/*   Updated: 2025/06/28 15:35:03 by ahekinci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,10 +35,10 @@ void	destroy_win(t_mlx *mlx)
 		free(mlx);
 }
 
-double	get_time_in_seconds()
+double	get_time_in_seconds(void)
 {
 	struct timeval	tv;
 
 	gettimeofday(&tv, NULL);
-	return tv.tv_sec + tv.tv_usec / 1000000.0;
+	return (tv.tv_sec + tv.tv_usec / 1000000.0);
 }

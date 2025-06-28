@@ -6,7 +6,7 @@
 /*   By: ahekinci <ahekinci@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 20:22:38 by ahekinci          #+#    #+#             */
-/*   Updated: 2025/06/26 16:09:23 by ahekinci         ###   ########.fr       */
+/*   Updated: 2025/06/28 15:01:00 by ahekinci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,8 +55,8 @@ int	init_player(t_data *data, size_t x, size_t y)
 	if (!data->player)
 		return (0);
 	set_player_direction(data, data->map->data[y][x]);
-	data->player->plane_x = -data->player->dir_y * tan((FOV / 2.0) * PI / 180.0);
-	data->player->plane_y = data->player->dir_x * tan((FOV / 2.0) * PI / 180.0);
+	data->player->plane_x = -data->player->dir_y * tan(FOV / 2.0 * PI / 180.0);
+	data->player->plane_y = data->player->dir_x * tan(FOV / 2.0 * PI / 180.0);
 	data->map->data[y][x] = '0';
 	if (!set_player_position(data, x, y))
 		return (0);

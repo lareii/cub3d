@@ -6,7 +6,7 @@
 /*   By: ahekinci <ahekinci@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/22 04:40:28 by ebabaogl          #+#    #+#             */
-/*   Updated: 2025/06/28 13:15:10 by ahekinci         ###   ########.fr       */
+/*   Updated: 2025/06/28 15:34:41 by ahekinci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static int	destroy_handler(t_mlx *mlx)
 	return (0);
 }
 
-static int key_press(int keycode, t_mlx *mlx)
+static int	key_press(int keycode, t_mlx *mlx)
 {
 	if (keycode == KEY_W)
 		mlx->keys->key_w = 1;
@@ -42,7 +42,7 @@ static int key_press(int keycode, t_mlx *mlx)
 	return (0);
 }
 
-static int key_release(int keycode, t_mlx *mlx)
+static int	key_release(int keycode, t_mlx *mlx)
 {
 	if (keycode == KEY_W)
 		mlx->keys->key_w = 0;
