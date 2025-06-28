@@ -6,7 +6,7 @@
 /*   By: ahekinci <ahekinci@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/22 04:17:09 by ebabaogl          #+#    #+#             */
-/*   Updated: 2025/06/28 15:35:03 by ahekinci         ###   ########.fr       */
+/*   Updated: 2025/06/28 18:31:47 by ahekinci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,11 @@
 
 void	destroy_win(t_mlx *mlx)
 {
+	if (mlx && mlx->mainframe_img)
+	{
+		mlx_destroy_image(mlx->mlx_ptr, mlx->mainframe_img->img_ptr);
+		free(mlx->mainframe_img);
+	}
 	if (mlx && mlx->win_ptr)
 		mlx_destroy_window(mlx->mlx_ptr, mlx->win_ptr);
 	if (mlx && mlx->mlx_ptr)
@@ -25,8 +30,6 @@ void	destroy_win(t_mlx *mlx)
 		#else
 			exit(1);
 		#endif
-	if (mlx && mlx->mainframe_img)
-		free(mlx->mainframe_img);
 	if (mlx && mlx->mlx_ptr)
 		free(mlx->mlx_ptr);
 	if (mlx && mlx->keys)

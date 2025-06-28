@@ -6,7 +6,7 @@
 /*   By: ahekinci <ahekinci@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/22 04:07:48 by ebabaogl          #+#    #+#             */
-/*   Updated: 2025/06/28 17:37:27 by ahekinci         ###   ########.fr       */
+/*   Updated: 2025/06/28 18:29:34 by ahekinci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,34 @@ static int	init_keys(t_mlx *mlx)
 
 static int	init_images(t_data *data)
 {
-	data->mlx->mainframe_img = malloc(sizeof(t_image));
-	if (!data->mlx->mainframe_img)
+	t_image	*mainframe_img;
+
+	mainframe_img = ft_calloc_c(1, sizeof(t_image));
+	if (!mainframe_img)
 		return (0);
+	mainframe_img->width = SCREEN_WIDTH;
+	mainframe_img->height = SCREEN_HEIGHT;
+	mainframe_img->img_ptr = mlx_new_image(data->mlx->mlx_ptr,
+		mainframe_img->width, mainframe_img->height);
+	if (!mainframe_img->img_ptr)
+		return (0);
+	mainframe_img->data_addr = mlx_get_data_addr(mainframe_img->img_ptr,
+		&mainframe_img->bpp, &mainframe_img->size_line, &mainframe_img->endian);
+	data->mlx->mainframe_img = mainframe_img;
 	return (1);
 }
+
+// static int	init_image_data(t_data *data, t_image *img, int w, int h)
+// {
+// 	img->width = w;
+// 	img->height = h;
+// 	img->img_ptr = mlx_new_image(data->mlx->mlx_ptr, w, h);
+// 	if (!img->img_ptr)
+// 		return (0);
+// 	img->data_addr = mlx_get_data_addr(img->img_ptr,
+// 			&img->bpp, &img->size_line, &img->endian);
+// 	return (1);
+// }
 
 int	init_mlx(t_data *data)
 {
