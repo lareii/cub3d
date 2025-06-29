@@ -1,0 +1,16 @@
+NO ./assets/no.xpm
+SO ./assets/so.xpm
+WE ./assets/we.xpm
+EA ./assets/ea.xpm
+
+C 0,0,255
+F 255,255,255
+
+         1
+      111011
+     1000W001
+      111011
+        101
+        101
+        101
+         1

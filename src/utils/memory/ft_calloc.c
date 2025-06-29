@@ -1,24 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   config.h                                           :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ahekinci <ahekinci@student.42kocaeli.co    +#+  +:+       +#+        */
+/*   By: ebabaogl <ebabaogl@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/22 01:55:37 by ebabaogl          #+#    #+#             */
-/*   Updated: 2025/06/28 13:56:41 by ahekinci         ###   ########.fr       */
+/*   Created: 2025/06/26 11:39:46 by ebabaogl          #+#    #+#             */
+/*   Updated: 2025/06/26 11:46:30 by ebabaogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CONFIG_H
-# define CONFIG_H
+#include <stdlib.h>
 
-# define WINDOW_TITLE "kupucde"
-# define SCREEN_WIDTH 800
-# define SCREEN_HEIGHT 600
+void	*ft_calloc_c(size_t count, size_t size)
+{
+	unsigned char	*ptr;
+	size_t			i;
 
-# define MOVE_SPEED_FACTOR 5.0
-# define ROT_SPEED_FACTOR 4.0
-# define FOV 66.0
-
-#endif
+	ptr = malloc(size * count);
+	if (!ptr)
+		return (NULL);
+	i = 0;
+	while (i < size * count)
+		ptr[i++] = 0;
+	return (ptr);
+}
