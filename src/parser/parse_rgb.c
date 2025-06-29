@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse_rgb.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ahekinci <ahekinci@student.42kocaeli.co    +#+  +:+       +#+        */
+/*   By: ebabaogl <ebabaogl@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/22 23:19:17 by ahekinci          #+#    #+#             */
-/*   Updated: 2025/06/29 14:06:53 by ahekinci         ###   ########.fr       */
+/*   Updated: 2025/06/29 14:29:22 by ebabaogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,6 @@ static int	count_char(const char *str, char c)
 	return (count);
 }
 
-#include <stdio.h>
 int	str_to_rgb(char *str)
 {
 	char	**rgb_values;
@@ -92,6 +91,5 @@ int	str_to_rgb(char *str)
 	}
 	free_str_arr(rgb_values);
 	free(str);
-	printf("r: %d g: %d b: %d\n", r, g, b);
 	return (rgb_to_int(r, g, b));
 }

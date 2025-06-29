@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_map_data.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ahekinci <ahekinci@student.42kocaeli.co    +#+  +:+       +#+        */
+/*   By: ebabaogl <ebabaogl@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/24 15:16:11 by ahekinci          #+#    #+#             */
-/*   Updated: 2025/06/29 14:25:29 by ahekinci         ###   ########.fr       */
+/*   Updated: 2025/06/29 14:59:26 by ebabaogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ static int	go_to_eof(int fd)
 	int		state;
 	char	*line;
 
-	state = 0;
+	state = 1;
 	while (1)
 	{
 		line = get_next_line(fd);
@@ -62,7 +62,7 @@ static int	go_to_eof(int fd)
 			break ;
 		if (line[0] != '\n')
 		{
-			state = 1;
+			state = 0;
 			free(line);
 			break ;
 		}
@@ -85,7 +85,7 @@ int	init_map_data(t_map *map, int fd)
 			if (line[0] == '\n' && go_to_eof(fd))
 			{
 				free(line);
-				break;
+				break ;
 			}
 			free(line);
 			get_next_line(-1);
@@ -93,7 +93,7 @@ int	init_map_data(t_map *map, int fd)
 		}
 		free(line);
 		line = get_next_line(fd);
-		if (line)
+		if (line && line[0] != '\n')
 			map->height++;
 	}
 	get_next_line(-1);
