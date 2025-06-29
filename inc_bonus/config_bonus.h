@@ -6,7 +6,7 @@
 /*   By: ebabaogl <ebabaogl@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/22 01:55:37 by ebabaogl          #+#    #+#             */
-/*   Updated: 2025/06/29 16:08:07 by ebabaogl         ###   ########.fr       */
+/*   Updated: 2025/06/29 16:44:43 by ebabaogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,5 +20,6 @@
 # define MOVE_SPEED_FACTOR 5.0
 # define ROT_SPEED_FACTOR 4.0
 # define FOV 66.0
+# define MOUSE_SENSITIVITY 0.002
 
 #endif

@@ -6,11 +6,11 @@
 /*   By: ebabaogl <ebabaogl@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 11:36:52 by ebabaogl          #+#    #+#             */
-/*   Updated: 2025/06/29 16:09:10 by ebabaogl         ###   ########.fr       */
+/*   Updated: 2025/06/29 16:56:23 by ebabaogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "utils.h"
+#include "utils_bonus.h"
 #include <stdlib.h>
 
 char	*ft_strtrim(char *s, char *set)

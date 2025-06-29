@@ -6,11 +6,11 @@
 /*   By: ebabaogl <ebabaogl@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 14:12:14 by ahekinci          #+#    #+#             */
-/*   Updated: 2025/06/29 16:08:59 by ebabaogl         ###   ########.fr       */
+/*   Updated: 2025/06/29 16:56:08 by ebabaogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
+#include "cub3d_bonus.h"
 #include <math.h>
 
 void	init_texture_render_data(t_data *data, t_ray *ray)

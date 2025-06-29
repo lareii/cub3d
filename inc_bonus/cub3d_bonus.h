@@ -6,17 +6,17 @@
 /*   By: ebabaogl <ebabaogl@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 21:17:24 by ebabaogl          #+#    #+#             */
-/*   Updated: 2025/06/29 16:08:15 by ebabaogl         ###   ########.fr       */
+/*   Updated: 2025/06/29 16:45:34 by ebabaogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CUB3D_BONUS_H
 # define CUB3D_BONUS_H
 
-# include "config.h"
-# include "window.h"
-# include "render.h"
-# include "utils.h"
+# include "config_bonus.h"
+# include "window_bonus.h"
+# include "render_bonus.h"
+# include "utils_bonus.h"
 # include <stddef.h>
 
 # define PI 3.14159265358979323846

@@ -6,11 +6,11 @@
 /*   By: ebabaogl <ebabaogl@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/28 15:04:49 by ahekinci          #+#    #+#             */
-/*   Updated: 2025/06/29 16:08:56 by ebabaogl         ###   ########.fr       */
+/*   Updated: 2025/06/29 16:56:00 by ebabaogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
+#include "cub3d_bonus.h"
 #include <math.h>
 
 static void	set_ray_direction(t_ray *ray, t_player *player, int x)

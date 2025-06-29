@@ -6,12 +6,12 @@
 /*   By: ebabaogl <ebabaogl@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 12:05:10 by ahekinci          #+#    #+#             */
-/*   Updated: 2025/06/29 16:09:00 by ebabaogl         ###   ########.fr       */
+/*   Updated: 2025/06/29 16:56:11 by ebabaogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "mlx.h"
-#include "cub3d.h"
+#include "cub3d_bonus.h"
 #include <stdio.h>
 
 static int	render(t_data *data)

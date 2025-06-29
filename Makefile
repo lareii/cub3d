@@ -2,6 +2,7 @@ NAME		= cub3D
 NAME_BONUS	= cub3D_bonus
 
 INC_DIR		= inc
+INC_DIR_BNS	= inc_bonus
 LIB_DIR		= lib
 BUILD_DIR	= build
 
@@ -36,7 +37,7 @@ BONUS_SRCS	= main_bonus.c \
 OBJS		= $(addprefix $(BUILD_DIR)/,$(SRCS:.c=.o))
 BONUS_OBJS	= $(addprefix $(BUILD_DIR)/,$(BONUS_SRCS:.c=.o))
 
-CFLAGS		= -Wall -Wextra -Werror -I$(INC_DIR) -I$(MLX_DIR) -I$(GNL_DIR)
+CFLAGS		= -Wall -Wextra -Werror -I$(MLX_DIR) -I$(GNL_DIR)
 LDFLAGS		= -L$(MLX_DIR)
 LDLIBS		= -lmlx -lm
 RM			= rm -rf
@@ -48,6 +49,7 @@ endif
 
 all: $(NAME)
 
+bonus: CFLAGS += -I$(INC_DIR_BNS)
 bonus: $(NAME_BONUS)
 
 $(MLX):
@@ -59,6 +61,7 @@ $(BUILD_DIR):
 $(BUILD_DIR)/%.o: %.c | $(BUILD_DIR)
 	$(CC) $(CFLAGS) -c $^ -o $@
 
+$(NAME): CFLAGS += -I$(INC_DIR)
 $(NAME): $(GNL_OBJS) $(OBJS) $(MLX)
 	$(CC) $(CFLAGS) $(GNL_OBJS) $(OBJS) $(LDFLAGS) $(LDLIBS) -o $(NAME)
 

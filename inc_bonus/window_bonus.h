@@ -6,14 +6,14 @@
 /*   By: ebabaogl <ebabaogl@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/22 01:57:34 by ebabaogl          #+#    #+#             */
-/*   Updated: 2025/06/29 16:08:30 by ebabaogl         ###   ########.fr       */
+/*   Updated: 2025/06/29 16:55:32 by ebabaogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef WINDOW_BONUS_H
 # define WINDOW_BONUS_H
 
-# include "render.h"
+# include "render_bonus.h"
 
 # if defined(__APPLE__) && defined(__MACH__)
 #  define KEY_W 13
@@ -41,6 +41,10 @@ typedef struct s_keys
 	int	key_d;
 	int	key_left;
 	int	key_right;
+
+	int	mouse_x;
+	int	mouse_delta_x;
+	int	last_mouse_x;
 }	t_keys;
 
 typedef struct s_mlx

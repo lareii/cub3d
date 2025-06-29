@@ -6,11 +6,11 @@
 /*   By: ebabaogl <ebabaogl@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/22 04:17:09 by ebabaogl          #+#    #+#             */
-/*   Updated: 2025/06/29 16:09:16 by ebabaogl         ###   ########.fr       */
+/*   Updated: 2025/06/29 16:56:34 by ebabaogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "window.h"
+#include "window_bonus.h"
 #include "mlx.h"
 #include <stdlib.h>
 #include <sys/time.h>

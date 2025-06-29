@@ -6,11 +6,11 @@
 /*   By: ebabaogl <ebabaogl@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/25 20:22:38 by ahekinci          #+#    #+#             */
-/*   Updated: 2025/06/29 16:08:52 by ebabaogl         ###   ########.fr       */
+/*   Updated: 2025/06/29 16:55:48 by ebabaogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
+#include "cub3d_bonus.h"
 #include <math.h>
 
 static void	set_player_direction(t_data *data, char direction)

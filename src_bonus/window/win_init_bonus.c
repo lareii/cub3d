@@ -6,11 +6,11 @@
 /*   By: ebabaogl <ebabaogl@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/22 04:07:48 by ebabaogl          #+#    #+#             */
-/*   Updated: 2025/06/29 16:09:15 by ebabaogl         ###   ########.fr       */
+/*   Updated: 2025/06/29 17:00:04 by ebabaogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
+#include "cub3d_bonus.h"
 #include "mlx.h"
 #include <stdlib.h>
 

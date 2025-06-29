@@ -6,11 +6,11 @@
 /*   By: ebabaogl <ebabaogl@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/22 23:19:17 by ahekinci          #+#    #+#             */
-/*   Updated: 2025/06/29 16:08:55 by ebabaogl         ###   ########.fr       */
+/*   Updated: 2025/06/29 16:55:55 by ebabaogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
+#include "cub3d_bonus.h"
 #include <stdlib.h>
 
 static int	rgb_to_int(int r, int g, int b)

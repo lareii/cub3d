@@ -6,11 +6,11 @@
 /*   By: ebabaogl <ebabaogl@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/24 16:08:23 by ahekinci          #+#    #+#             */
-/*   Updated: 2025/06/29 16:08:53 by ebabaogl         ###   ########.fr       */
+/*   Updated: 2025/06/29 16:55:50 by ebabaogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
+#include "cub3d_bonus.h"
 
 static int	check_map_items(t_data *data)
 {
