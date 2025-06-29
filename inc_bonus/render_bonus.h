@@ -6,7 +6,7 @@
 /*   By: ebabaogl <ebabaogl@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/22 01:55:53 by ebabaogl          #+#    #+#             */
-/*   Updated: 2025/06/30 00:12:03 by ebabaogl         ###   ########.fr       */
+/*   Updated: 2025/06/30 00:57:46 by ebabaogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,7 @@ typedef struct s_textures
 	t_image	*south;
 	t_image	*west;
 	t_image	*east;
+	t_image	*door;
 	int		floor;
 	int		ceiling;
 }	t_textures;

@@ -6,7 +6,7 @@
 /*   By: ebabaogl <ebabaogl@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/22 19:47:23 by ahekinci          #+#    #+#             */
-/*   Updated: 2025/06/29 16:55:57 by ebabaogl         ###   ########.fr       */
+/*   Updated: 2025/06/30 01:36:16 by ebabaogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,30 +33,25 @@ int	filename_checker(char *str)
 	return (1);
 }
 
+static void	destroy_texture(t_data *data, t_image **texture)
+{
+	if (*texture)
+	{
+		mlx_destroy_image(data->mlx->mlx_ptr, (*texture)->img_ptr);
+		free(*texture);
+	}
+}
+
 void	free_textures(t_data *data)
 {
-	if (data->textures && data->textures->north)
-	{
-		mlx_destroy_image(data->mlx->mlx_ptr, data->textures->north->img_ptr);
-		free(data->textures->north);
-	}
-	if (data->textures && data->textures->south)
-	{
-		mlx_destroy_image(data->mlx->mlx_ptr, data->textures->south->img_ptr);
-		free(data->textures->south);
-	}
-	if (data->textures && data->textures->west)
-	{
-		mlx_destroy_image(data->mlx->mlx_ptr, data->textures->west->img_ptr);
-		free(data->textures->west);
-	}
-	if (data->textures && data->textures->east)
-	{
-		mlx_destroy_image(data->mlx->mlx_ptr, data->textures->east->img_ptr);
-		free(data->textures->east);
-	}
-	if (data->textures)
-		free(data->textures);
+	if (!data->textures)
+		return ;
+	destroy_texture(data, &data->textures->north);
+	destroy_texture(data, &data->textures->south);
+	destroy_texture(data, &data->textures->west);
+	destroy_texture(data, &data->textures->east);
+	destroy_texture(data, &data->textures->door);
+	free(data->textures);
 }
 
 void	free_map(t_data *data)

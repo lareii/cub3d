@@ -6,11 +6,12 @@
 /*   By: ebabaogl <ebabaogl@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 12:51:05 by ahekinci          #+#    #+#             */
-/*   Updated: 2025/06/30 00:06:09 by ebabaogl         ###   ########.fr       */
+/*   Updated: 2025/06/30 00:57:11 by ebabaogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d_bonus.h"
+#include <math.h>
 
 void	draw_pixel_on_image(t_image *img, int color, int x, int y)
 {

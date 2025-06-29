@@ -6,7 +6,7 @@
 /*   By: ebabaogl <ebabaogl@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 14:12:14 by ahekinci          #+#    #+#             */
-/*   Updated: 2025/06/29 16:56:08 by ebabaogl         ###   ########.fr       */
+/*   Updated: 2025/06/30 01:25:30 by ebabaogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,9 @@ void	init_texture_render_data(t_data *data, t_ray *ray)
 
 void	select_wall_texture(t_data *data, t_ray *ray)
 {
-	if (ray->side == 0)
+	if (ray->hit == 2)
+		ray->texture = data->textures->door;
+	else if (ray->side == 0)
 	{
 		if (ray->dir_x > 0)
 			ray->texture = data->textures->west;

@@ -6,7 +6,7 @@
 /*   By: ebabaogl <ebabaogl@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/22 20:15:22 by ahekinci          #+#    #+#             */
-/*   Updated: 2025/06/29 16:55:46 by ebabaogl         ###   ########.fr       */
+/*   Updated: 2025/06/30 01:33:34 by ebabaogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static int	set_textures(t_data *data)
 	return (1);
 }
 
-static int	set_texture_path(t_data *mlx, t_image **dir, char *line)
+static int	set_texture_path(t_data *data, t_image **dir, char *line)
 {
 	t_image	*img;
 	char	*path;
@@ -39,7 +39,7 @@ static int	set_texture_path(t_data *mlx, t_image **dir, char *line)
 		img = ft_calloc_c(1, sizeof(t_image));
 		if (!img)
 			return (0);
-		img->img_ptr = mlx_xpm_file_to_image(mlx->mlx->mlx_ptr, path,
+		img->img_ptr = mlx_xpm_file_to_image(data->mlx->mlx_ptr, path,
 				&img->width, &img->height);
 		free(path);
 		if (!img->img_ptr)
@@ -87,7 +87,9 @@ int	init_map_textures(t_data *data, int fd)
 {
 	char	*line;
 
-	if (!set_textures(data))
+	if (!set_textures(data)
+		|| !set_texture_path(data, &data->textures->door,
+			"   ./assets/door.xpm"))
 		return (0);
 	while (1)
 	{

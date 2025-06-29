@@ -6,7 +6,7 @@
 /*   By: ebabaogl <ebabaogl@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/24 16:08:23 by ahekinci          #+#    #+#             */
-/*   Updated: 2025/06/29 16:55:50 by ebabaogl         ###   ########.fr       */
+/*   Updated: 2025/06/30 01:37:53 by ebabaogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ static int	check_map_items(t_data *data)
 				if (player_count++ == 0 && !init_player(data, x, y))
 					return (0);
 			}
-			else if (item != ' ' && item != '1' && item != '0')
+			else if (item != ' ' && item != '1' && item != '0' && item != 'D')
 				return (0);
 			x++;
 		}
@@ -63,7 +63,7 @@ static int	check_map_walls(t_map *map)
 		x = 0;
 		while (x < ft_strlen_c(map->data[y]))
 		{
-			if (map->data[y][x] == '0')
+			if (map->data[y][x] == '0' || map->data[y][x] == 'D')
 			{
 				if (!check_position(map, x, y))
 					return (0);
