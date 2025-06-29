@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ahekinci <ahekinci@student.42kocaeli.co    +#+  +:+       +#+        */
+/*   By: ebabaogl <ebabaogl@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 21:17:24 by ebabaogl          #+#    #+#             */
-/*   Updated: 2025/06/28 17:39:32 by ahekinci         ###   ########.fr       */
+/*   Updated: 2025/06/29 15:44:50 by ebabaogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,12 +70,15 @@ int		map_validator(t_data *data);
 
 // render
 int		game_loop(t_data *data);
-void	draw_pixel_on_image(t_image *img, int color, int x, int y);
+void	init_texture_render_data(t_data *data, t_ray *ray);
+void	select_wall_texture(t_data *data, t_ray *ray);
+void	compute_texture_coords(t_ray *ray);
+void	draw_texture_line(t_image *img, t_ray *ray, int x, int y);
+void	draw_vertical_line(t_data *data, t_ray *ray, size_t x);
 void	raycaster(t_data *data);
 void	perform_dda(t_ray *ray, char **map, t_player *player, int x);
 void	handle_movement(t_data *data);
 void	handle_rotation(t_data *data);
 void	draw_floor_and_ceiling(t_data *data);
-
 
 #endif

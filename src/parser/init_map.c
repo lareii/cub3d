@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   init_map.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ahekinci <ahekinci@student.42kocaeli.co    +#+  +:+       +#+        */
+/*   By: ebabaogl <ebabaogl@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/22 19:40:17 by ahekinci          #+#    #+#             */
-/*   Updated: 2025/06/28 15:01:52 by ahekinci         ###   ########.fr       */
+/*   Updated: 2025/06/29 15:38:48 by ebabaogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
+#include "get_next_line.h"
 #include <fcntl.h>
 #include <stdlib.h>
 #include <unistd.h>
@@ -33,6 +34,7 @@ int	init_map(t_data *data, char **argv)
 		return (0);
 	if (!init_map_textures(data, fd))
 	{
+		get_next_line(-1);
 		close(fd);
 		return (0);
 	}

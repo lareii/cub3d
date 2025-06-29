@@ -6,7 +6,7 @@
 /*   By: ebabaogl <ebabaogl@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/22 23:19:17 by ahekinci          #+#    #+#             */
-/*   Updated: 2025/06/29 14:29:22 by ebabaogl         ###   ########.fr       */
+/*   Updated: 2025/06/29 15:36:26 by ebabaogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ static int	parse_rgb_value(char *str)
 {
 	int	err;
 	int	value;
-	int i;
+	int	i;
 
 	err = 0;
 	value = 0;
@@ -34,7 +34,7 @@ static int	parse_rgb_value(char *str)
 			if (str[i] == ' ')
 			{
 				i++;
-				continue;
+				continue ;
 			}
 			if (str[i] < '0' || str[i] > '9')
 				return (-1);
@@ -70,9 +70,7 @@ int	str_to_rgb(char *str)
 	int		g;
 	int		b;
 
-	if (!str)
-		return (-1);
-	if (count_char(str, ',') != 2)
+	if (!str || count_char(str, ',') != 2)
 		return (-1);
 	rgb_values = ft_split(str, ',');
 	if (!rgb_values)

@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   draw.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ahekinci <ahekinci@student.42kocaeli.co    +#+  +:+       +#+        */
+/*   By: ebabaogl <ebabaogl@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 12:51:05 by ahekinci          #+#    #+#             */
-/*   Updated: 2025/06/28 15:22:36 by ahekinci         ###   ########.fr       */
+/*   Updated: 2025/06/29 15:40:28 by ebabaogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-void	draw_pixel_on_image(t_image *img, int color, int x, int y)
+static void	draw_pixel_on_image(t_image *img, int color, int x, int y)
 {
 	char	*dst;
 
@@ -41,6 +41,45 @@ void	draw_floor_and_ceiling(t_data *data)
 					data->textures->floor, x, y);
 			x++;
 		}
+		y++;
+	}
+}
+
+void	draw_texture_line(t_image *img, t_ray *ray, int x, int y)
+{
+	int		tex_y;
+	int		color;
+	char	*pixel;
+
+	tex_y = (int)ray->tex_pos;
+	if (tex_y >= ray->texture->height)
+		tex_y = ray->texture->height - 1;
+	ray->tex_pos += ray->tex_step;
+	pixel = ray->texture->data_addr
+		+ (tex_y * ray->texture->size_line
+			+ ray->tex_x * (ray->texture->bpp / 8));
+	color = *(unsigned int *)pixel;
+	draw_pixel_on_image(img, color, x, y);
+}
+
+void	draw_vertical_line(t_data *data, t_ray *ray, size_t x)
+{
+	int	y;
+
+	init_texture_render_data(data, ray);
+	select_wall_texture(data, ray);
+	compute_texture_coords(ray);
+	y = 0;
+	while (y < SCREEN_HEIGHT)
+	{
+		if (y < ray->draw_start)
+			draw_pixel_on_image(data->mlx->mainframe_img,
+				data->textures->ceiling, x, y);
+		else if (y <= ray->draw_end)
+			draw_texture_line(data->mlx->mainframe_img, ray, x, y);
+		else
+			draw_pixel_on_image(data->mlx->mainframe_img,
+				data->textures->floor, x, y);
 		y++;
 	}
 }
