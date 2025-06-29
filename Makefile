@@ -31,7 +31,7 @@ SRCS		= main.c \
 BONUS_SRCS	= main_bonus.c \
 			win_init_bonus.c win_utils_bonus.c win_hooks_bonus.c \
 			utils_map_bonus.c init_map_bonus.c init_map_data_bonus.c init_map_textures_bonus.c parse_rgb_bonus.c map_validator_bonus.c init_player_bonus.c \
-			draw_bonus.c render_bonus.c raycaster_bonus.c input_bonus.c dda_bonus.c \
+			draw_bonus.c render_bonus.c raycaster_bonus.c input_bonus.c dda_bonus.c minimap_bonus.c \
 			ft_calloc_bonus.c ft_memcpy_bonus.c \
 			ft_atol_bonus.c ft_split_bonus.c ft_strchr_bonus.c ft_strdup_bonus.c ft_strlen_bonus.c ft_strtrim_bonus.c str_arr_bonus.c
 OBJS		= $(addprefix $(BUILD_DIR)/,$(SRCS:.c=.o))

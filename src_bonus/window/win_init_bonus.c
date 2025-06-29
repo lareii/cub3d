@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   win_init_bonus.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ebabaogl <ebabaogl@student.42kocaeli.co    +#+  +:+       +#+        */
+/*   By: ahekinci <ahekinci@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/22 04:07:48 by ebabaogl          #+#    #+#             */
-/*   Updated: 2025/06/29 17:48:23 by ebabaogl         ###   ########.fr       */
+/*   Updated: 2025/06/29 18:18:12 by ahekinci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,27 @@ static int	init_keys(t_mlx *mlx)
 	return (1);
 }
 
-static int	init_images(t_data *data)
+static int	init_minimap(t_data *data)
+{
+	t_image	*minimap_img;
+
+	minimap_img = ft_calloc_c(1, sizeof(t_image));
+	if (!minimap_img)
+		return (0);
+	minimap_img->width = MINIMAP_WIDTH;
+	minimap_img->height = MINIMAP_HEIGHT;
+	minimap_img->img_ptr = mlx_new_image(data->mlx->mlx_ptr,
+			minimap_img->width, minimap_img->height);
+	if (!minimap_img->img_ptr)
+		return (0);
+	minimap_img->data_addr = mlx_get_data_addr(minimap_img->img_ptr,
+			&minimap_img->bpp, &minimap_img->size_line,
+			&minimap_img->endian);
+	data->mlx->minimap_img = minimap_img;
+	return (1);
+}
+
+static int	init_mainframe(t_data *data)
 {
 	t_image	*mainframe_img;
 
@@ -59,7 +79,7 @@ int	init_win(t_data *data)
 	data->mlx->win_ptr = mlx_new_window(data->mlx->mlx_ptr,
 			SCREEN_WIDTH, SCREEN_HEIGHT, WINDOW_TITLE);
 	if (!data->mlx->win_ptr || !init_keys(data->mlx)
-		|| !init_images(data))
+		|| !init_mainframe(data) || !init_minimap(data))
 		return (0);
 	#if defined(__linux__)
 	mlx_mouse_move(data->mlx->mlx_ptr, data->mlx->win_ptr,

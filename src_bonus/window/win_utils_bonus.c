@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   win_utils_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ebabaogl <ebabaogl@student.42kocaeli.co    +#+  +:+       +#+        */
+/*   By: ahekinci <ahekinci@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/22 04:17:09 by ebabaogl          #+#    #+#             */
-/*   Updated: 2025/06/29 17:38:58 by ebabaogl         ###   ########.fr       */
+/*   Updated: 2025/06/29 18:19:05 by ahekinci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,11 @@
 
 void	destroy_win(t_mlx *mlx)
 {
+	if (mlx && mlx->minimap_img)
+	{
+		mlx_destroy_image(mlx->mlx_ptr, mlx->minimap_img->img_ptr);
+		free(mlx->minimap_img);
+	}
 	if (mlx && mlx->mainframe_img)
 	{
 		mlx_destroy_image(mlx->mlx_ptr, mlx->mainframe_img->img_ptr);

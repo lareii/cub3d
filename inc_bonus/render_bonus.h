@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   render_bonus.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ebabaogl <ebabaogl@student.42kocaeli.co    +#+  +:+       +#+        */
+/*   By: ahekinci <ahekinci@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/22 01:55:53 by ebabaogl          #+#    #+#             */
-/*   Updated: 2025/06/29 16:08:20 by ebabaogl         ###   ########.fr       */
+/*   Updated: 2025/06/29 18:40:32 by ahekinci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,5 +63,29 @@ typedef struct s_textures
 	int		floor;
 	int		ceiling;
 }	t_textures;
+
+typedef struct s_circle
+{
+	int	x;
+	int	y;
+	int	radius;
+	int	color;
+}	t_circle;
+
+typedef struct s_rectangle
+{
+	int	x;
+	int	y;
+	int	width;
+	int	height;
+	int	color;
+}	t_rectangle;
+
+void	draw_circle_on_image(t_image *img, t_circle *circle);
+void	draw_rectangle_on_image(t_image *img, t_rectangle *rect);
+
+// for example usage:
+// int draw_circle(t_circle circle)
+// draw_circle((t_circle){.x = 400, .y = 300, .radius = 50, .color = CIRCLE_COLOR});
 
 #endif

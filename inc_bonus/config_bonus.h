@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   config_bonus.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ebabaogl <ebabaogl@student.42kocaeli.co    +#+  +:+       +#+        */
+/*   By: ahekinci <ahekinci@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/22 01:55:37 by ebabaogl          #+#    #+#             */
-/*   Updated: 2025/06/29 16:44:43 by ebabaogl         ###   ########.fr       */
+/*   Updated: 2025/06/29 17:56:17 by ahekinci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,15 @@
 # define WINDOW_TITLE "kupucde"
 # define SCREEN_WIDTH 800
 # define SCREEN_HEIGHT 600
+
+# define MINIMAP_WIDTH 75
+# define MINIMAP_HEIGHT 75
+# define MINIMAP_PADDING 10
+# define MINIMAP_TITLE_SIZE 10
+# define MINIMAP_PLAYER_RADIUS 2
+# define MINIMAP_WALL_COLOR 0x40E0D0
+# define MINIMAP_BACK_COLOR 0xFFFFFF
+# define MINIMAP_PLAYER_COLOR 0xFF0000
 
 # define MOVE_SPEED_FACTOR 5.0
 # define ROT_SPEED_FACTOR 4.0

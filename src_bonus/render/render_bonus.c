@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   render_bonus.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ebabaogl <ebabaogl@student.42kocaeli.co    +#+  +:+       +#+        */
+/*   By: ahekinci <ahekinci@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 12:05:10 by ahekinci          #+#    #+#             */
-/*   Updated: 2025/06/29 17:49:27 by ebabaogl         ###   ########.fr       */
+/*   Updated: 2025/06/29 18:43:55 by ahekinci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,9 @@ static int	render(t_data *data)
 	raycaster(data);
 	mlx_put_image_to_window(data->mlx->mlx_ptr, data->mlx->win_ptr,
 		data->mlx->mainframe_img->img_ptr, 0, 0);
+	draw_map_on_image(data);
+	mlx_put_image_to_window(data->mlx->mlx_ptr, data->mlx->win_ptr,
+		data->mlx->minimap_img->img_ptr, SCREEN_WIDTH - MINIMAP_WIDTH - MINIMAP_PADDING, MINIMAP_PADDING);
 	#if defined(__linux__)
 	mlx_mouse_move(data->mlx->mlx_ptr, data->mlx->win_ptr,
 		SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2);

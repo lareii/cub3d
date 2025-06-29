@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   window_bonus.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ebabaogl <ebabaogl@student.42kocaeli.co    +#+  +:+       +#+        */
+/*   By: ahekinci <ahekinci@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/22 01:57:34 by ebabaogl          #+#    #+#             */
-/*   Updated: 2025/06/29 17:04:13 by ebabaogl         ###   ########.fr       */
+/*   Updated: 2025/06/29 17:57:33 by ahekinci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,7 @@ typedef struct s_mlx
 	void	*mlx_ptr;
 	void	*win_ptr;
 	t_image	*mainframe_img;
+	t_image *minimap_img;
 	t_keys	*keys;
 	double	time;
 	double	oldtime;
