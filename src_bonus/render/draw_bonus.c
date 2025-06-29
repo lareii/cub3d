@@ -3,20 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   draw_bonus.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ahekinci <ahekinci@student.42kocaeli.co    +#+  +:+       +#+        */
+/*   By: ebabaogl <ebabaogl@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 12:51:05 by ahekinci          #+#    #+#             */
-/*   Updated: 2025/06/29 18:19:37 by ahekinci         ###   ########.fr       */
+/*   Updated: 2025/06/30 00:06:09 by ebabaogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d_bonus.h"
 
-static void	draw_pixel_on_image(t_image *img, int color, int x, int y)
+void	draw_pixel_on_image(t_image *img, int color, int x, int y)
 {
 	char	*dst;
 
-	if (x < 0 || x >= SCREEN_WIDTH || y < 0 || y >= SCREEN_HEIGHT)
+	if (x < 0 || x >= img->width || y < 0 || y >= img->height)
 		return ;
 	dst = img->data_addr + (y * img->size_line + x * (img->bpp / 8));
 	*(unsigned int *)dst = color;
@@ -75,7 +75,8 @@ void	draw_circle_on_image(t_image *img, t_circle *circle)
 		while (j <= circle->radius)
 		{
 			if (i * i + j * j <= circle->radius * circle->radius)
-				draw_pixel_on_image(img, circle->color, circle->x + i, circle->y + j);
+				draw_pixel_on_image(img, circle->color,
+					circle->x + i, circle->y + j);
 			j++;
 		}
 		i++;

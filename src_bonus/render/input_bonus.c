@@ -6,7 +6,7 @@
 /*   By: ebabaogl <ebabaogl@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/28 14:25:11 by ahekinci          #+#    #+#             */
-/*   Updated: 2025/06/29 17:04:41 by ebabaogl         ###   ########.fr       */
+/*   Updated: 2025/06/30 00:05:56 by ebabaogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,6 +78,7 @@ static void	calc_rotation(t_data *data, double angle)
 void	handle_rotation(t_data *data)
 {
 	double	angle;
+
 	if (data->mlx->keys->key_left)
 		calc_rotation(data, -data->mlx->frame_time * ROT_SPEED_FACTOR);
 	if (data->mlx->keys->key_right)

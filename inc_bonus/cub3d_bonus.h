@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d_bonus.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ahekinci <ahekinci@student.42kocaeli.co    +#+  +:+       +#+        */
+/*   By: ebabaogl <ebabaogl@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 21:17:24 by ebabaogl          #+#    #+#             */
-/*   Updated: 2025/06/29 18:42:39 by ahekinci         ###   ########.fr       */
+/*   Updated: 2025/06/29 23:37:50 by ebabaogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,5 +80,6 @@ void	perform_dda(t_ray *ray, char **map, t_player *player, int x);
 void	handle_movement(t_data *data);
 void	handle_rotation(t_data *data);
 void	draw_map_on_image(t_data *data);
+void	draw_pixel_on_image(t_image *img, int color, int x, int y);
 
 #endif
