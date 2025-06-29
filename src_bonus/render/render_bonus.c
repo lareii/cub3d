@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   render_bonus.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ebabaogl <ebabaogl@student.42kocaeli.co    +#+  +:+       +#+        */
+/*   By: ahekinci <ahekinci@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 12:05:10 by ahekinci          #+#    #+#             */
-/*   Updated: 2025/06/30 01:59:04 by ebabaogl         ###   ########.fr       */
+/*   Updated: 2025/06/30 02:17:10 by ahekinci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ static int	render(t_data *data)
 	data->mlx->frame_time = data->mlx->time - data->mlx->oldtime;
 	printf("fps: %f\n", 1.0 / data->mlx->frame_time);
 	raycaster(data);
+	place_torch(data);
 	mlx_put_image_to_window(data->mlx->mlx_ptr, data->mlx->win_ptr,
 		data->mlx->mainframe_img->img_ptr, 0, 0);
 	draw_map_on_image(data);

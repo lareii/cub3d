@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils_map_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ebabaogl <ebabaogl@student.42kocaeli.co    +#+  +:+       +#+        */
+/*   By: ahekinci <ahekinci@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/22 19:47:23 by ahekinci          #+#    #+#             */
-/*   Updated: 2025/06/30 01:36:16 by ebabaogl         ###   ########.fr       */
+/*   Updated: 2025/06/30 01:54:48 by ahekinci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,12 @@ void	free_textures(t_data *data)
 	destroy_texture(data, &data->textures->west);
 	destroy_texture(data, &data->textures->east);
 	destroy_texture(data, &data->textures->door);
+	destroy_texture(data, &data->textures->torch);
+	destroy_texture(data, &data->textures->torch1);
+	destroy_texture(data, &data->textures->torch2);
+	destroy_texture(data, &data->textures->torch3);
+	destroy_texture(data, &data->textures->torch4);
+	destroy_texture(data, &data->textures->torch5);
 	free(data->textures);
 }
 

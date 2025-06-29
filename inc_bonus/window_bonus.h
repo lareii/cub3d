@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   window_bonus.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ebabaogl <ebabaogl@student.42kocaeli.co    +#+  +:+       +#+        */
+/*   By: ahekinci <ahekinci@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/22 01:57:34 by ebabaogl          #+#    #+#             */
-/*   Updated: 2025/06/30 01:58:51 by ebabaogl         ###   ########.fr       */
+/*   Updated: 2025/06/30 02:07:08 by ahekinci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 #  define KEY_A 0
 #  define KEY_S 1
 #  define KEY_D 2
+#  define KEY_L 37
 #  define KEY_LEFT 123
 #  define KEY_RIGHT 124
 #  define KEY_ESC 53

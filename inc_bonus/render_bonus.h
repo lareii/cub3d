@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   render_bonus.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ebabaogl <ebabaogl@student.42kocaeli.co    +#+  +:+       +#+        */
+/*   By: ahekinci <ahekinci@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/22 01:55:53 by ebabaogl          #+#    #+#             */
-/*   Updated: 2025/06/30 00:57:46 by ebabaogl         ###   ########.fr       */
+/*   Updated: 2025/06/30 01:45:47 by ahekinci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,12 @@ typedef struct s_textures
 	t_image	*west;
 	t_image	*east;
 	t_image	*door;
+	t_image	*torch;
+	t_image	*torch1;
+	t_image	*torch2;
+	t_image	*torch3;
+	t_image	*torch4;
+	t_image	*torch5;
 	int		floor;
 	int		ceiling;
 }	t_textures;

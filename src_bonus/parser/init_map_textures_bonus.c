@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_map_textures_bonus.c                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ebabaogl <ebabaogl@student.42kocaeli.co    +#+  +:+       +#+        */
+/*   By: ahekinci <ahekinci@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/22 20:15:22 by ahekinci          #+#    #+#             */
-/*   Updated: 2025/06/30 01:33:34 by ebabaogl         ###   ########.fr       */
+/*   Updated: 2025/06/30 01:56:11 by ahekinci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static int	set_textures(t_data *data)
 	return (1);
 }
 
-static int	set_texture_path(t_data *data, t_image **dir, char *line)
+int	set_texture_path(t_data *data, t_image **dir, char *line)
 {
 	t_image	*img;
 	char	*path;
@@ -88,8 +88,7 @@ int	init_map_textures(t_data *data, int fd)
 	char	*line;
 
 	if (!set_textures(data)
-		|| !set_texture_path(data, &data->textures->door,
-			"   ./assets/door.xpm"))
+		|| !init_bonus_textures(data))
 		return (0);
 	while (1)
 	{

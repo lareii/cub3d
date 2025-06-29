@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d_bonus.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ebabaogl <ebabaogl@student.42kocaeli.co    +#+  +:+       +#+        */
+/*   By: ahekinci <ahekinci@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 21:17:24 by ebabaogl          #+#    #+#             */
-/*   Updated: 2025/06/29 23:37:50 by ebabaogl         ###   ########.fr       */
+/*   Updated: 2025/06/30 02:16:54 by ahekinci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,8 @@ void	free_player(t_data *data);
 int		init_map_textures(t_data *data, int fd);
 int		str_to_rgb(char *str);
 int		map_validator(t_data *data);
+int		set_texture_path(t_data *data, t_image **dir, char *line);
+int		init_bonus_textures(t_data *data);
 
 // render
 int		game_loop(t_data *data);
@@ -81,5 +83,7 @@ void	handle_movement(t_data *data);
 void	handle_rotation(t_data *data);
 void	draw_map_on_image(t_data *data);
 void	draw_pixel_on_image(t_image *img, int color, int x, int y);
+void	blend_torch_scaled_onto_frame(t_image *frame, t_image *torch, int draw_width, int draw_height);
+void	place_torch(t_data *data);
 
 #endif
