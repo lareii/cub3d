@@ -6,7 +6,7 @@
 /*   By: ebabaogl <ebabaogl@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/22 04:40:28 by ebabaogl          #+#    #+#             */
-/*   Updated: 2025/06/29 17:03:00 by ebabaogl         ###   ########.fr       */
+/*   Updated: 2025/06/30 01:59:04 by ebabaogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,8 @@ static int	key_release(int keycode, t_mlx *mlx)
 		mlx->keys->key_s = 0;
 	if (keycode == KEY_D)
 		mlx->keys->key_d = 0;
+	if (keycode == KEY_L)
+		mlx->keys->is_mouse_locked = !mlx->keys->is_mouse_locked;
 	if (keycode == KEY_LEFT)
 		mlx->keys->key_left = 0;
 	if (keycode == KEY_RIGHT)

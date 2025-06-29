@@ -6,7 +6,7 @@
 /*   By: ebabaogl <ebabaogl@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/22 01:55:37 by ebabaogl          #+#    #+#             */
-/*   Updated: 2025/06/30 00:01:52 by ebabaogl         ###   ########.fr       */
+/*   Updated: 2025/06/30 01:58:32 by ebabaogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # define SCREEN_WIDTH 800
 # define SCREEN_HEIGHT 600
 
-# define MINIMAP_WIDTH 100 // fixed
+# define MINIMAP_WIDTH 100
 # define MINIMAP_HEIGHT 100
 # define MINIMAP_PADDING 10
 # define MINIMAP_TILE_SIZE 10

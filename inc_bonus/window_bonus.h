@@ -6,7 +6,7 @@
 /*   By: ebabaogl <ebabaogl@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/22 01:57:34 by ebabaogl          #+#    #+#             */
-/*   Updated: 2025/06/30 00:12:20 by ebabaogl         ###   ########.fr       */
+/*   Updated: 2025/06/30 01:58:51 by ebabaogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@
 #  define KEY_A 97
 #  define KEY_S 115
 #  define KEY_D 100
+#  define KEY_L 108
 #  define KEY_LEFT 65361
 #  define KEY_RIGHT 65363
 #  define KEY_ESC 65307
@@ -41,7 +42,8 @@ typedef struct s_keys
 	int	key_d;
 	int	key_left;
 	int	key_right;
-
+	
+	int	is_mouse_locked;
 	int	mouse_delta_x;
 }	t_keys;
 

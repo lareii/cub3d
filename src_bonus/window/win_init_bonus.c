@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   win_init_bonus.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ahekinci <ahekinci@student.42kocaeli.co    +#+  +:+       +#+        */
+/*   By: ebabaogl <ebabaogl@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/22 04:07:48 by ebabaogl          #+#    #+#             */
-/*   Updated: 2025/06/29 18:18:12 by ahekinci         ###   ########.fr       */
+/*   Updated: 2025/06/30 01:59:04 by ebabaogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ static int	init_keys(t_mlx *mlx)
 	mlx->keys = ft_calloc_c(1, sizeof(t_keys));
 	if (!mlx->keys)
 		return (0);
+	mlx->keys->is_mouse_locked = 1;
 	return (1);
 }
 
@@ -81,13 +82,6 @@ int	init_win(t_data *data)
 	if (!data->mlx->win_ptr || !init_keys(data->mlx)
 		|| !init_mainframe(data) || !init_minimap(data))
 		return (0);
-	#if defined(__linux__)
-	mlx_mouse_move(data->mlx->mlx_ptr, data->mlx->win_ptr,
-		SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2);
-	#else
-	mlx_mouse_move(data->mlx->win_ptr,
-		SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2);
-	#endif
 	init_hooks(data);
 	return (1);
 }

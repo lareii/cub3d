@@ -6,7 +6,7 @@
 /*   By: ebabaogl <ebabaogl@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 12:05:10 by ahekinci          #+#    #+#             */
-/*   Updated: 2025/06/29 23:27:34 by ebabaogl         ###   ########.fr       */
+/*   Updated: 2025/06/30 01:59:04 by ebabaogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,13 +26,16 @@ static int	render(t_data *data)
 	draw_map_on_image(data);
 	mlx_put_image_to_window(data->mlx->mlx_ptr, data->mlx->win_ptr,
 		data->mlx->minimap_img->img_ptr, 0, 0);
-	#if defined(__linux__)
-	mlx_mouse_move(data->mlx->mlx_ptr, data->mlx->win_ptr,
-		SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2);
-	#else
-	mlx_mouse_move(data->mlx->win_ptr,
-		SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2);
-	#endif
+	if (data->mlx->keys->is_mouse_locked)
+	{
+		#if defined(__linux__)
+		mlx_mouse_move(data->mlx->mlx_ptr, data->mlx->win_ptr,
+			SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2);
+		#else
+		mlx_mouse_move(data->mlx->win_ptr,
+			SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2);
+		#endif
+	}
 	return (1);
 }
 
