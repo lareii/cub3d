@@ -6,7 +6,7 @@
 /*   By: ahekinci <ahekinci@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/22 01:57:34 by ebabaogl          #+#    #+#             */
-/*   Updated: 2025/06/28 13:14:20 by ahekinci         ###   ########.fr       */
+/*   Updated: 2025/06/29 13:44:28 by ahekinci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@
 #  define KEY_A 0
 #  define KEY_S 1
 #  define KEY_D 2
+#  define KEY_LEFT 123
+#  define KEY_RIGHT 124
 #  define KEY_ESC 53
 # elif defined(__linux__)
 #  define KEY_W 119
