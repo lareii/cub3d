@@ -6,7 +6,7 @@
 /*   By: ebabaogl <ebabaogl@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 21:17:24 by ebabaogl          #+#    #+#             */
-/*   Updated: 2025/06/29 15:44:50 by ebabaogl         ###   ########.fr       */
+/*   Updated: 2025/06/29 17:35:02 by ebabaogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,6 +79,5 @@ void	raycaster(t_data *data);
 void	perform_dda(t_ray *ray, char **map, t_player *player, int x);
 void	handle_movement(t_data *data);
 void	handle_rotation(t_data *data);
-void	draw_floor_and_ceiling(t_data *data);
 
 #endif

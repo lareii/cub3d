@@ -55,4 +55,5 @@ dkms.conf
 .DS_Store
 build/
 cub3D
+cub3D_bonus
 .vscode/

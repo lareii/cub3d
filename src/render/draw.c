@@ -6,7 +6,7 @@
 /*   By: ebabaogl <ebabaogl@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 12:51:05 by ahekinci          #+#    #+#             */
-/*   Updated: 2025/06/29 15:40:28 by ebabaogl         ###   ########.fr       */
+/*   Updated: 2025/06/29 17:35:14 by ebabaogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,29 +20,6 @@ static void	draw_pixel_on_image(t_image *img, int color, int x, int y)
 		return ;
 	dst = img->data_addr + (y * img->size_line + x * (img->bpp / 8));
 	*(unsigned int *)dst = color;
-}
-
-void	draw_floor_and_ceiling(t_data *data)
-{
-	size_t	y;
-	size_t	x;
-
-	y = 0;
-	while (y < SCREEN_HEIGHT)
-	{
-		x = 0;
-		while (x < SCREEN_WIDTH)
-		{
-			if (y < SCREEN_HEIGHT / 2)
-				draw_pixel_on_image(data->mlx->mainframe_img,
-					data->textures->ceiling, x, y);
-			else
-				draw_pixel_on_image(data->mlx->mainframe_img,
-					data->textures->floor, x, y);
-			x++;
-		}
-		y++;
-	}
 }
 
 void	draw_texture_line(t_image *img, t_ray *ray, int x, int y)
