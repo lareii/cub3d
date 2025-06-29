@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   dda.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ahekinci <ahekinci@student.42kocaeli.co    +#+  +:+       +#+        */
+/*   By: ebabaogl <ebabaogl@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/28 15:04:49 by ahekinci          #+#    #+#             */
-/*   Updated: 2025/06/28 15:22:03 by ahekinci         ###   ########.fr       */
+/*   Updated: 2025/06/29 12:09:06 by ebabaogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 
 static void	set_ray_direction(t_ray *ray, t_player *player, int x)
 {
-	ray->camera_x = 2 * x / (double)SCREEN_WIDTH - 1;
-	ray->dir_x = player->dir_x + player->plane_x * ray->camera_x;
-	ray->dir_y = player->dir_y + player->plane_y * ray->camera_x;
+	ray->camera_x = (2 * x / (double)SCREEN_WIDTH) - 1;
+	ray->dir_x = player->dir_x + (player->plane_x * ray->camera_x);
+	ray->dir_y = player->dir_y + (player->plane_y * ray->camera_x);
 }
 
 static void	init_ray(t_ray *ray, t_player *player)

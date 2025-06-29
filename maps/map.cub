@@ -1,7 +1,7 @@
-NO ./assets/no.xpm
+NO ./assets/so.xpm
 SO ./assets/so.xpm
-WE ./assets/we.xpm
-EA ./assets/ea.xpm
+WE ./assets/so.xpm
+EA ./assets/so.xpm
 
 F 34,34,34
 C 170,170,170

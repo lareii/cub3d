@@ -3,6 +3,8 @@ reqs for debian/ubuntu:
 
 ### TODO
 - [x] include destroy_win to free_all func
+- [x] rotation & movement
+- [x] create textures image pointer on init_mlx
 
-- [ ] rotation & movement
-- [ ] create textures image pointer on init_mlx
+- [ ] parse rgb values correctly `=170`, `-123`, 
+- [ ] skip newlines after map content
