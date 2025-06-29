@@ -6,7 +6,7 @@
 /*   By: ebabaogl <ebabaogl@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/22 04:07:48 by ebabaogl          #+#    #+#             */
-/*   Updated: 2025/06/29 17:00:04 by ebabaogl         ###   ########.fr       */
+/*   Updated: 2025/06/29 17:08:30 by ebabaogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,9 @@ int	init_win(t_data *data)
 	if (!data->mlx->win_ptr || !init_keys(data->mlx)
 		|| !init_images(data))
 		return (0);
+	mlx_mouse_hide(data->mlx->mlx_ptr, data->mlx->win_ptr);
+	mlx_mouse_move(data->mlx->mlx_ptr, data->mlx->win_ptr,
+		SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2);
 	init_hooks(data);
 	return (1);
 }

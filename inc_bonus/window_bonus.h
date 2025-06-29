@@ -6,7 +6,7 @@
 /*   By: ebabaogl <ebabaogl@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/22 01:57:34 by ebabaogl          #+#    #+#             */
-/*   Updated: 2025/06/29 16:55:32 by ebabaogl         ###   ########.fr       */
+/*   Updated: 2025/06/29 17:04:13 by ebabaogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,9 +42,7 @@ typedef struct s_keys
 	int	key_left;
 	int	key_right;
 
-	int	mouse_x;
 	int	mouse_delta_x;
-	int	last_mouse_x;
 }	t_keys;
 
 typedef struct s_mlx
