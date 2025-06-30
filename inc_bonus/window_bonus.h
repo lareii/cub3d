@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   window_bonus.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ahekinci <ahekinci@student.42kocaeli.co    +#+  +:+       +#+        */
+/*   By: ebabaogl <ebabaogl@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/22 01:57:34 by ebabaogl          #+#    #+#             */
-/*   Updated: 2025/06/30 02:07:08 by ahekinci         ###   ########.fr       */
+/*   Updated: 2025/06/30 11:46:31 by ebabaogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ typedef struct s_keys
 	int	key_d;
 	int	key_left;
 	int	key_right;
-	
+
 	int	is_mouse_locked;
 	int	mouse_delta_x;
 }	t_keys;

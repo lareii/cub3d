@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d_bonus.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ahekinci <ahekinci@student.42kocaeli.co    +#+  +:+       +#+        */
+/*   By: ebabaogl <ebabaogl@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 21:17:24 by ebabaogl          #+#    #+#             */
-/*   Updated: 2025/06/30 02:16:54 by ahekinci         ###   ########.fr       */
+/*   Updated: 2025/06/30 11:44:48 by ebabaogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,6 @@ void	handle_movement(t_data *data);
 void	handle_rotation(t_data *data);
 void	draw_map_on_image(t_data *data);
 void	draw_pixel_on_image(t_image *img, int color, int x, int y);
-void	blend_torch_scaled_onto_frame(t_image *frame, t_image *torch, int draw_width, int draw_height);
 void	place_torch(t_data *data);
 
 #endif

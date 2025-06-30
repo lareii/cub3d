@@ -6,7 +6,7 @@
 /*   By: ebabaogl <ebabaogl@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/22 01:55:53 by ebabaogl          #+#    #+#             */
-/*   Updated: 2025/06/29 11:10:57 by ebabaogl         ###   ########.fr       */
+/*   Updated: 2025/06/30 11:46:07 by ebabaogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ typedef struct s_ray
 	int		map_x;
 	int		map_y;
 
-	// dda
 	double	side_dist_x;
 	double	side_dist_y;
 	double	delta_dist_x;
@@ -43,7 +42,6 @@ typedef struct s_ray
 	int		side;
 	double	perp_wall_dist;
 
-	// texture
 	t_image	*texture;
 	int		line_height;
 	int		draw_start;
