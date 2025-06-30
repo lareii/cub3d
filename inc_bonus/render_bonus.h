@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   render.h                                           :+:      :+:    :+:   */
+/*   render_bonus.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ebabaogl <ebabaogl@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/22 01:55:53 by ebabaogl          #+#    #+#             */
-/*   Updated: 2025/06/30 11:46:07 by ebabaogl         ###   ########.fr       */
+/*   Updated: 2025/06/30 11:46:39 by ebabaogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef RENDER_H
-# define RENDER_H
+#ifndef RENDER_BONUS_H
+# define RENDER_BONUS_H
 
 typedef struct s_image
 {
@@ -58,8 +58,35 @@ typedef struct s_textures
 	t_image	*south;
 	t_image	*west;
 	t_image	*east;
+	t_image	*door;
+	t_image	*torch;
+	t_image	*torch1;
+	t_image	*torch2;
+	t_image	*torch3;
+	t_image	*torch4;
+	t_image	*torch5;
 	int		floor;
 	int		ceiling;
 }	t_textures;
+
+typedef struct s_circle
+{
+	int	x;
+	int	y;
+	int	radius;
+	int	color;
+}	t_circle;
+
+typedef struct s_rectangle
+{
+	int	x;
+	int	y;
+	int	width;
+	int	height;
+	int	color;
+}	t_rectangle;
+
+void	draw_circle_on_image(t_image *img, t_circle *circle);
+void	draw_rectangle_on_image(t_image *img, t_rectangle *rect);
 
 #endif

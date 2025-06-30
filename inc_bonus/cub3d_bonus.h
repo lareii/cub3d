@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cub3d.h                                            :+:      :+:    :+:   */
+/*   cub3d_bonus.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ebabaogl <ebabaogl@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/16 21:17:24 by ebabaogl          #+#    #+#             */
-/*   Updated: 2025/06/29 17:35:02 by ebabaogl         ###   ########.fr       */
+/*   Updated: 2025/06/30 11:44:48 by ebabaogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CUB3D_H
-# define CUB3D_H
+#ifndef CUB3D_BONUS_H
+# define CUB3D_BONUS_H
 
-# include "config.h"
-# include "window.h"
-# include "render.h"
-# include "utils.h"
+# include "config_bonus.h"
+# include "window_bonus.h"
+# include "render_bonus.h"
+# include "utils_bonus.h"
 # include <stddef.h>
 
 # define PI 3.14159265358979323846
@@ -67,6 +67,8 @@ void	free_player(t_data *data);
 int		init_map_textures(t_data *data, int fd);
 int		str_to_rgb(char *str);
 int		map_validator(t_data *data);
+int		set_texture_path(t_data *data, t_image **dir, char *line);
+int		init_bonus_textures(t_data *data);
 
 // render
 int		game_loop(t_data *data);
@@ -79,5 +81,8 @@ void	raycaster(t_data *data);
 void	perform_dda(t_ray *ray, char **map, t_player *player, int x);
 void	handle_movement(t_data *data);
 void	handle_rotation(t_data *data);
+void	draw_map_on_image(t_data *data);
+void	draw_pixel_on_image(t_image *img, int color, int x, int y);
+void	place_torch(t_data *data);
 
 #endif
