@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main_bonus.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ebabaogl <ebabaogl@student.42kocaeli.co    +#+  +:+       +#+        */
+/*   By: ahekinci <ahekinci@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/22 04:03:41 by ebabaogl          #+#    #+#             */
-/*   Updated: 2025/06/29 16:48:18 by ebabaogl         ###   ########.fr       */
+/*   Updated: 2025/06/30 16:50:03 by ahekinci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ int	main(int argc, char **argv)
 		return (EXIT_FAILURE);
 	if (argc != 2)
 	{
+		free(data);
 		write(2, "Error\n", 6);
 		return (EXIT_FAILURE);
 	}

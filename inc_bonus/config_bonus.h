@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   config_bonus.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ebabaogl <ebabaogl@student.42kocaeli.co    +#+  +:+       +#+        */
+/*   By: ahekinci <ahekinci@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/22 01:55:37 by ebabaogl          #+#    #+#             */
-/*   Updated: 2025/06/30 01:58:32 by ebabaogl         ###   ########.fr       */
+/*   Updated: 2025/06/30 16:58:21 by ahekinci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@
 
 # define MINIMAP_WIDTH 100
 # define MINIMAP_HEIGHT 100
-# define MINIMAP_PADDING 10
 # define MINIMAP_TILE_SIZE 10
 # define MINIMAP_PLAYER_RADIUS 3
 # define MINIMAP_WALL_COLOR 0x808080
