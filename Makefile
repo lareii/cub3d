@@ -12,11 +12,7 @@ GNL_DIR		= $(LIB_DIR)/get_next_line
 GNL_SRCS	= $(GNL_DIR)/get_next_line.c \
 			$(GNL_DIR)/get_next_line_utils.c
 GNL_OBJS	= $(addprefix $(BUILD_DIR)/, $(notdir $(GNL_SRCS:.c=.o)))
-ifeq ($(UNAME),Linux)
-	MLX_DIR	= $(LIB_DIR)/minilibx-linux
-else ifeq ($(UNAME),Darwin)
-	MLX_DIR	= $(LIB_DIR)/minilibx-macos
-endif
+MLX_DIR		= $(LIB_DIR)/minilibx-linux
 MLX			= $(MLX_DIR)/libmlx.a
 
 VPATH		= $(GNL_DIR)
@@ -39,13 +35,8 @@ BONUS_OBJS	= $(addprefix $(BUILD_DIR)/,$(BONUS_SRCS:.c=.o))
 
 CFLAGS		= -Wall -Wextra -Werror -I$(MLX_DIR) -I$(GNL_DIR)
 LDFLAGS		= -L$(MLX_DIR)
-LDLIBS		= -lmlx -lm
+LDLIBS		= -lmlx -lm -lXext -lX11 
 RM			= rm -rf
-ifeq ($(UNAME),Linux)
-	LDLIBS	+= -lXext -lX11 
-else ifeq ($(UNAME),Darwin)
-	LDLIBS	+= -framework OpenGL -framework AppKit
-endif
 
 all: $(NAME)
 
