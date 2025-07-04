@@ -6,7 +6,7 @@
 /*   By: ebabaogl <ebabaogl@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/22 04:07:48 by ebabaogl          #+#    #+#             */
-/*   Updated: 2025/06/29 15:43:54 by ebabaogl         ###   ########.fr       */
+/*   Updated: 2025/07/04 15:04:05 by ebabaogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ static int	init_keys(t_mlx *mlx)
 	return (1);
 }
 
-static int	init_images(t_data *data)
+static int	init_mainframe(t_data *data)
 {
 	t_image	*mainframe_img;
 
@@ -58,7 +58,7 @@ int	init_win(t_data *data)
 	data->mlx->win_ptr = mlx_new_window(data->mlx->mlx_ptr,
 			SCREEN_WIDTH, SCREEN_HEIGHT, WINDOW_TITLE);
 	if (!data->mlx->win_ptr || !init_keys(data->mlx)
-		|| !init_images(data))
+		|| !init_mainframe(data))
 		return (0);
 	init_hooks(data);
 	return (1);

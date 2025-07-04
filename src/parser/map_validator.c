@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   map_validator.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ebabaogl <ebabaogl@student.42kocaeli.co    +#+  +:+       +#+        */
+/*   By: ahekinci <ahekinci@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/24 16:08:23 by ahekinci          #+#    #+#             */
-/*   Updated: 2025/06/26 18:08:52 by ebabaogl         ###   ########.fr       */
+/*   Updated: 2025/06/30 16:54:36 by ahekinci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,11 +43,18 @@ static int	check_map_items(t_data *data)
 
 static int	check_position(t_map *map, size_t x, size_t y)
 {
-	if (x == 0 || x == ft_strlen_c(map->data[y]) - 1
-		|| y == 0 || y == map->height - 1)
+	size_t	len;
+
+	len = ft_strlen_c(map->data[y]);
+	if (y == 0 || y + 1 >= map->height || x == 0 || x + 1 >= len)
 		return (0);
-	if (map->data[y - 1][x] == ' ' || map->data[y + 1][x] == ' '
-		|| map->data[y][x - 1] == ' ' || map->data[y][x + 1] == ' ')
+	if (x >= ft_strlen_c(map->data[y - 1]) || map->data[y - 1][x] == ' ')
+		return (0);
+	if (x >= ft_strlen_c(map->data[y + 1]) || map->data[y + 1][x] == ' ')
+		return (0);
+	if (x - 1 >= ft_strlen_c(map->data[y]) || map->data[y][x - 1] == ' ')
+		return (0);
+	if (x + 1 >= ft_strlen_c(map->data[y]) || map->data[y][x + 1] == ' ')
 		return (0);
 	return (1);
 }

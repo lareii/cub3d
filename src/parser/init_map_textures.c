@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_map_textures.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ahekinci <ahekinci@student.42kocaeli.co    +#+  +:+       +#+        */
+/*   By: ebabaogl <ebabaogl@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/22 20:15:22 by ahekinci          #+#    #+#             */
-/*   Updated: 2025/06/28 17:38:28 by ahekinci         ###   ########.fr       */
+/*   Updated: 2025/07/04 15:14:20 by ebabaogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,10 @@ static int	set_texture_path(t_data *mlx, t_image **dir, char *line)
 				&img->width, &img->height);
 		free(path);
 		if (!img->img_ptr)
+		{
+			free(img);
 			return (0);
+		}
 		img->data_addr = mlx_get_data_addr(img->img_ptr, &img->bpp,
 				&img->size_line, &img->endian);
 		*dir = img;

@@ -6,7 +6,7 @@
 /*   By: ahekinci <ahekinci@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/22 04:03:41 by ebabaogl          #+#    #+#             */
-/*   Updated: 2025/06/28 17:36:48 by ahekinci         ###   ########.fr       */
+/*   Updated: 2025/06/30 16:49:58 by ahekinci         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ int	main(int argc, char **argv)
 		return (EXIT_FAILURE);
 	if (argc != 2)
 	{
+		free(data);
 		write(2, "Error\n", 6);
 		return (EXIT_FAILURE);
 	}

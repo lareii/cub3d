@@ -6,7 +6,7 @@
 /*   By: ebabaogl <ebabaogl@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/30 01:40:08 by ahekinci          #+#    #+#             */
-/*   Updated: 2025/06/30 11:57:49 by ebabaogl         ###   ########.fr       */
+/*   Updated: 2025/07/04 14:41:49 by ebabaogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,8 +66,6 @@ int	init_bonus_textures(t_data *data)
 		"   ./assets/torch/torch4.xpm");
 	set_texture_path(data, &data->textures->torch5,
 		"   ./assets/torch/torch5.xpm");
-	set_texture_path(data, &data->textures->door,
-		"   ./assets/door.xpm");
 	if (!data->textures->torch1 || !data->textures->torch2
 		|| !data->textures->torch3 || !data->textures->torch4
 		|| !data->textures->torch5)
