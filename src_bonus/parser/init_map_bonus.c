@@ -6,7 +6,7 @@
 /*   By: ebabaogl <ebabaogl@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/22 19:40:17 by ahekinci          #+#    #+#             */
-/*   Updated: 2025/06/29 16:55:40 by ebabaogl         ###   ########.fr       */
+/*   Updated: 2025/07/04 15:22:42 by ebabaogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ int	init_map(t_data *data, char **argv)
 	data->map = ft_calloc_c(1, sizeof(t_map));
 	if (!init_map_data(data->map, fd) || !data->map)
 	{
+		get_next_line(-1);
 		close(fd);
 		return (0);
 	}

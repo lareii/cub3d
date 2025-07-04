@@ -6,7 +6,7 @@
 /*   By: ebabaogl <ebabaogl@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/22 23:19:17 by ahekinci          #+#    #+#             */
-/*   Updated: 2025/06/29 15:36:26 by ebabaogl         ###   ########.fr       */
+/*   Updated: 2025/07/04 15:15:00 by ebabaogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,11 +70,10 @@ int	str_to_rgb(char *str)
 	int		g;
 	int		b;
 
-	if (!str || count_char(str, ',') != 2)
-		return (-1);
 	rgb_values = ft_split(str, ',');
-	if (!rgb_values)
+	if (!str || count_char(str, ',') != 2 || !rgb_values)
 	{
+		free_str_arr(rgb_values);
 		free(str);
 		return (-1);
 	}

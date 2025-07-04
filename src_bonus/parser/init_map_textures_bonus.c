@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_map_textures_bonus.c                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ahekinci <ahekinci@student.42kocaeli.co    +#+  +:+       +#+        */
+/*   By: ebabaogl <ebabaogl@student.42kocaeli.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/22 20:15:22 by ahekinci          #+#    #+#             */
-/*   Updated: 2025/06/30 01:56:11 by ahekinci         ###   ########.fr       */
+/*   Updated: 2025/07/04 15:10:04 by ebabaogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int	set_texture_path(t_data *data, t_image **dir, char *line)
 
 	if (!*dir)
 	{
-		path = ft_strtrim(line + 3, " \n");
+		path = ft_strtrim(line, " \n");
 		if (!path)
 			return (0);
 		img = ft_calloc_c(1, sizeof(t_image));
@@ -43,7 +43,10 @@ int	set_texture_path(t_data *data, t_image **dir, char *line)
 				&img->width, &img->height);
 		free(path);
 		if (!img->img_ptr)
+		{
+			free(img);
 			return (0);
+		}
 		img->data_addr = mlx_get_data_addr(img->img_ptr, &img->bpp,
 				&img->size_line, &img->endian);
 		*dir = img;
@@ -55,7 +58,8 @@ int	set_texture_path(t_data *data, t_image **dir, char *line)
 static int	all_textures_set(t_textures *textures)
 {
 	if (textures->north && textures->south && textures->west
-		&& textures->east && textures->floor != -1 && textures->ceiling != -1)
+		&& textures->east && textures->door
+		&& textures->floor != -1 && textures->ceiling != -1)
 		return (1);
 	return (0);
 }
@@ -63,13 +67,15 @@ static int	all_textures_set(t_textures *textures)
 static int	parse_textures(t_data *data, char *line)
 {
 	if (line[0] == 'N' && line[1] == 'O' && line[2] == ' ')
-		return (set_texture_path(data, &data->textures->north, line));
+		return (set_texture_path(data, &data->textures->north, line + 3));
 	else if (line[0] == 'S' && line[1] == 'O' && line[2] == ' ')
-		return (set_texture_path(data, &data->textures->south, line));
+		return (set_texture_path(data, &data->textures->south, line + 3));
 	else if (line[0] == 'W' && line[1] == 'E' && line[2] == ' ')
-		return (set_texture_path(data, &data->textures->west, line));
+		return (set_texture_path(data, &data->textures->west, line + 3));
 	else if (line[0] == 'E' && line[1] == 'A' && line[2] == ' ')
-		return (set_texture_path(data, &data->textures->east, line));
+		return (set_texture_path(data, &data->textures->east, line + 3));
+	else if (line[0] == 'D' && line[1] == ' ')
+		return (set_texture_path(data, &data->textures->door, line + 2));
 	else if (line[0] == 'F' && line[1] == ' ')
 	{
 		data->textures->floor = str_to_rgb(ft_strtrim(line + 2, " \n"));
