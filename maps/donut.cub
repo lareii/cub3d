@@ -1,7 +1,7 @@
-NO ./assets/no.xpm
-SO ./assets/so.xpm
-WE ./assets/we.xpm
-EA ./assets/ea.xpm
+NO ./assets/greystone.xpm
+SO ./assets/redbrick.xpm
+WE ./assets/colorstone.xpm
+EA ./assets/wood.xpm
 
 F 220,100,0
 C 225,30,0

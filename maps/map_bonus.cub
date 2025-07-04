@@ -1,17 +1,18 @@
-NO ./assets/redbrick.xpm
-SO ./assets/redbrick.xpm
-WE ./assets/redbrick.xpm
-EA ./assets/redbrick.xpm
+NO ./assets/wood.xpm
+SO ./assets/wood.xpm
+WE ./assets/wood.xpm
+EA ./assets/wood.xpm
+D ./assets/door.xpm
 
-F 34,34,34
-C 170,170,170
+F 0,0,0
+C 28,16,9
 
 
 
         1111111111111111111111111
         1000000000110000000000001
         1011000001110000000000001
-        10010000000000000000W0001
+        1001000000D000000000W0001
 111111111011000001110000000000001
 100000000011000001110111111111111
 11110111111111011100000010001
